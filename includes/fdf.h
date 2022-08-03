@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/03 22:58:09 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/03 23:27:02 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ typedef struct s_rect
 # include <X11/X.h>
 # include <stdio.h>
 # include <string.h>
+# include "../libraries/42_libft/libft.h"
 
 #endif

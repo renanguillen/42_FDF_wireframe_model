@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/03 21:54:34 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/04 01:10:59 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,34 @@ int	render(t_data *data)
 	return (0);
 }
 
-int	main(void)
+void	check_args(int argc, char **argv)
+{
+	int	i;
+
+	if (argc != 2)
+	{
+		ft_putstr_fd("Invalid syntax", 2);
+		exit (1);
+	}
+	else
+	{
+		if (!argv[1])
+			exit (1);
+		i = ft_strlen(argv[1]) - 1;
+		if (argv[1][i] != 'f' || argv[1][i - 1] != 'd' || argv[1][i - 2] != 'f'
+			|| argv[1][i - 3] != '.')
+				exit (1);
+		while (i <= 0)
+			if ((argv[1][i] < 33) || (argv[1][i--] > 126))
+				exit (1);
+	}
+}
+
+int	main(int argc, char **argv)
 {
 	t_data	data;
-
+	
+	check_args(argc, argv);
 	data.mlx_ptr = mlx_init();
 	if (data.mlx_ptr == NULL)
 		return (MLX_ERROR);
