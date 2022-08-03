@@ -26,11 +26,10 @@ $(LIBFT):
 	make -C $(PATH_LIBFT)
 
 clean:
-	$(REMOVE) $(OBJS)
+	$(REMOVE) $(NAME)
 
 fclean: clean
 	make fclean -C $(PATH_LIBFT)
-	$(REMOVE) $(NAME)
 
 re: fclean all
 
