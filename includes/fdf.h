@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/03 23:27:02 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/04 22:13:06 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # define RED_PIXEL 0xFF0000
 # define GREEN_PIXEL 0xFF00
 # define WHITE_PIXEL 0xFFFFFF
+# define BUFFER_SIZE 4096
 
 typedef struct s_img
 {
@@ -37,18 +38,15 @@ typedef struct s_data
 	int		cur_img;
 }	t_data;
 
-typedef struct s_rect
+typedef struct s_dot
 {
-	int	x;
-	int	y;
-	int width;
-	int height;
-	int color;
-}	t_rect;
+	int				x;
+	int				y;
+	int				value;
+	unsigned int	color;
+}	t_dot;
 
 # include <stdlib.h>
-# include <mlx.h>
-# include <X11/keysym.h>
 # include <X11/X.h>
 # include <stdio.h>
 # include <string.h>
