@@ -44,7 +44,7 @@ git:
 	@echo 1
 	@sleep 2
 	git add .
-	git commit -m 'automatic commit'
+	git commit -m 'automatic commit [Make Git]'
 	git push
 
 PHONY: all clean fclean re
