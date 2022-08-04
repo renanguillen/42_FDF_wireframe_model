@@ -46,5 +46,7 @@ git:
 	git add .
 	git commit -m 'automatic commit [Make Git]'
 	git push
+	clear
+	git status
 
 PHONY: all clean fclean re
