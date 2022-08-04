@@ -36,7 +36,12 @@ re: fclean all
 
 git:
 	git status
-	sleep 1
+	@sleep 1
+	@echo 3
+	@sleep 1
+	@echo 2
+	@sleep 1
+	@echo 1
 	git add .
 	git commit -m 'automatic commit'
 	git push
