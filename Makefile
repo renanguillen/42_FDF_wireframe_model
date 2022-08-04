@@ -34,4 +34,11 @@ fclean: clean
 
 re: fclean all
 
+git:
+	git status
+	sleep 1
+	git add .
+	git commit -m 'automatic commit'
+	git push
+
 PHONY: all clean fclean re
