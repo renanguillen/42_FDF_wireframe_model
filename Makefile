@@ -42,6 +42,7 @@ git:
 	@echo 2
 	@sleep 1
 	@echo 1
+	@sleep 2
 	git add .
 	git commit -m 'automatic commit'
 	git push
