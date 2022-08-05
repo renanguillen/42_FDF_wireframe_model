@@ -13,7 +13,7 @@ OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 LIBFT = $(PATH_LIBFT)libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 LFLAGS = -lX11 -lXext -lmlx $(LIBFT)
 IFLAGS = -I $(PATH_INCL)
 
@@ -26,7 +26,7 @@ $(NAME): $(OBJS) $(LIBFT)
 
 $(PATH_OBJS)%.o: $(PATH_SRCS)%.c
 	mkdir -p $(PATH_OBJS)
-	$(CC) $(IFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 $(LIBFT):
 	make -C $(PATH_LIBFT)

@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/05 16:05:53 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/05 21:28:39 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,66 @@ int	check_args(int argc, char **argv)
 	return (i);
 }
 
-// int	count_lines(int fd)
-// {
-	
-// }
+int	count_lines(char *argv)
+{
+	int		fd;
+	char	c;
+	int		lines;
+
+	lines = 0;
+	fd = open(argv, O_RDONLY);
+	while (read(fd, &c, 1))
+	{
+		if (c == '\n' || c == 0)
+			lines++;
+	}
+	return (lines);
+}
+
+void found_error(void **pointer)
+{
+	if (!pointer)
+	{
+		ft_putstr_fd("Something went wrong\n", 2);
+		exit(1);
+	}
+}
 
 int	main(int argc, char **argv)
 {
-	t_data	data;
-	t_dot	*dot;
-	int fd;
-	// int lines;
-	
+	int		fd;
+	int		row_count;
+	char	**lines;
+	int		i;
+	int		j;
+	char	**split;
+	int		col_count;
+	t_dot	**dot;
+
+	i = 0;
 	fd = check_args(argc, argv);
-	// lines = count_lines(fd);
+	row_count = count_lines(argv[1]);
+	lines = malloc(sizeof (char *) * (row_count + 1));
+	found_error ((void **)lines);
+	while (i < row_count)
+		lines[i++] = get_next_line(fd);
+	lines[i] = NULL;
+	i = 0;
+	split = ft_split(lines[i], ' ');
+	col_count = ft_splitlen(split);
+	ft_matrixfree((void **)split);
+	dot = malloc(sizeof (t_dot *) * row_count);
+	found_error ((void **)dot);
+	while (lines[i])
+	{
+		dot[i] = malloc(sizeof (t_dot) * col_count);
+		found_error((void **) &dot[i]);
+		split = ft_split(lines[i], ' ');
+		j = 0;
+		while (j < col_count)
+			dot[i][j].value = ft_atoi(split[j++]);
+		ft_matrixfree(split);
+		i++;
+	}
+	return (0);
 }

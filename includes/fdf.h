@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/05 15:50:44 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/05 20:45:42 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ typedef struct s_data
 
 typedef struct s_
 {
-	int				x;
-	int				y;
 	int				value;
 	unsigned int	color;
 }	t_dot;
