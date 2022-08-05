@@ -12,37 +12,39 @@ OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 
 LIBFT = $(PATH_LIBFT)libft.a
 
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
-MINIFLAGS = -lX11 -lXext -lmlx
-INCLUDES = -I $(PATH_INCLUDES)
+LFLAGS = -lX11 -lXext -lmlx $(LIBFT)
+IFLAGS = -I $(PATH_INCL)
 
 REMOVE = rm -rf
 
 all: $(NAME)
 
-$(NAME): $(SRCS) $(LIBFT)
-	cc -g $(SRCS) $(MINIFLAGS) -L$(PATH_LIBFT) -lft -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(IFLAGS) -o $(NAME) $(OBJS) $(LFLAGS)
+
+$(PATH_OBJS)%.o: $(PATH_SRCS)%.c
+	mkdir -p $(PATH_OBJS)
+	$(CC) $(IFLAGS) -c $< -o $@
 
 $(LIBFT):
 	make -C $(PATH_LIBFT)
 
 clean:
-	$(REMOVE) $(NAME)
+	$(REMOVE) $(PATH_OBJS)
+	make clean -C $(PATH_LIBFT)
 
 fclean: clean
+	$(REMOVE) $(NAME)
 	make fclean -C $(PATH_LIBFT)
+
 
 re: fclean all
 
 git:
 	git status
-	@sleep 1
-	@echo 3
-	@sleep 1
-	@echo 2
-	@sleep 1
-	@echo 1
-	@sleep 2
+	@sleep 1 && echo 5 && sleep 1 && echo 4 && sleep 1 && echo 3 && sleep 1 && echo 2 && sleep 1 && echo 1 && sleep 2
 	git add .
 	git commit -m 'automatic commit [Make Git]'
 	git push
