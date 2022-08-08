@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/08 17:36:52 by coder            ###   ########.fr       */
+/*   Updated: 2022/08/08 20:26:12 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int	main(int argc, char **argv)
 	int		i;
 	int		j;
 	char	**split;
+	char	**split2;
 	int		col_count;
 	t_dot	**dot;
 
@@ -97,10 +98,22 @@ int	main(int argc, char **argv)
 		split = ft_split(lines[i], ' ');
 		j = 0;
 		while (j < col_count)
-			dot[i][j].value = ft_atoi(split[j++]);
+		{
+			if (ft_strchr(split[j], ','))
+			{
+				split2 = ft_split(split[j], ',');
+				dot[i][j].value = ft_atoi(split2[0]);
+				dot[i][j].color = split2[1];
+				ft_matrixfree((void **)split2);
+			}
+			else
+			{
+				dot[i][j].value = ft_atoi(split[j]);
+				dot[i][j].color = "0xFFFFFF";
+			}
+		}
 		ft_matrixfree(split);
 		i++;
 	}
-	printf("teste");
 	return (0);
 }
