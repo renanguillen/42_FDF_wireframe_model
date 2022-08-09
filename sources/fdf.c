@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/08 20:26:12 by coder            ###   ########.fr       */
+/*   Updated: 2022/08/08 21:12:21 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,16 +103,17 @@ int	main(int argc, char **argv)
 			{
 				split2 = ft_split(split[j], ',');
 				dot[i][j].value = ft_atoi(split2[0]);
-				dot[i][j].color = split2[1];
+				dot[i][j].color = ft_strdup(split2[1]);
 				ft_matrixfree((void **)split2);
 			}
 			else
 			{
 				dot[i][j].value = ft_atoi(split[j]);
-				dot[i][j].color = "0xFFFFFF";
+				dot[i][j].color = ft_strdup("0xFFFFFF");
 			}
+			j++;
 		}
-		ft_matrixfree(split);
+		ft_matrixfree((void **)split);
 		i++;
 	}
 	return (0);
