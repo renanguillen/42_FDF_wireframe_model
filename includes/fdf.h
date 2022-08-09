@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/09 20:19:59 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/09 22:42:18 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 
 # include <stdlib.h>
 # include <X11/X.h>
+# include <X11/keysym.h>
+# include <mlx.h>
 # include <stdio.h>
 # include <fcntl.h>
 # include <string.h>
@@ -47,7 +49,7 @@ typedef struct s_data
 typedef struct s_dot
 {
 	int				value;
-	char			*color;
+	int				color;
 }	t_dot;
 
 typedef struct s_matrix

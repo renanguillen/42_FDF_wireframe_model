@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:12:21 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/09 20:12:36 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/09 22:44:00 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ void	get_arguments(t_matrix *matrix, int i)
 		{
 			split2 = ft_split(matrix->split[j], ',');
 			matrix->dot[i][j].value = ft_atoi(split2[0]);
-			matrix->dot[i][j].color = ft_strdup(split2[1]);
+			matrix->dot[i][j].color = RED_PIXEL;
 			ft_matrixfree((void **)split2);
 		}
 		else
 		{
 			matrix->dot[i][j].value = ft_atoi(matrix->split[j]);
-			matrix->dot[i][j].color = ft_strdup("0xFFFFFF");
+			matrix->dot[i][j].color = GREEN_PIXEL;
 		}
 		j++;
 	}
