@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_matrixfree.c                                    :+:      :+:    :+:   */
+/*   found_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/05 20:35:11 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/09 20:08:10 by ridalgo-         ###   ########.fr       */
+/*   Created: 2022/08/09 20:15:53 by ridalgo-          #+#    #+#             */
+/*   Updated: 2022/08/09 20:16:06 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/fdf.h"
 
-void	ft_matrixfree(void **matrix)
+void	found_error(void **pointer)
 {
-	int	i;
-
-	i = 0;
-	if (!matrix)
-		return ;
-	while (matrix[i])
-		free(matrix[i++]);
-	free(matrix);
+	if (!pointer)
+	{
+		ft_putstr_fd("Something went wrong\n", 2);
+		exit(1);
+	}
 }

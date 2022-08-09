@@ -6,7 +6,13 @@ PATH_INCL = ./includes/
 PATH_LIBFT = ./libraries/42_libft/
 
 SRCS = $(addprefix $(PATH_SRCS),\
-		fdf.c)
+		fdf.c\
+		write_matrix.c\
+		get_arguments.c\
+		get_lines.c\
+		found_error.c\
+		count_lines.c\
+		check_args.c)
 
 OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 
