@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/10 20:14:45 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/10 22:05:08 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,14 @@ int	handle_keypress(int keysym, t_data *data)
 		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 		data->win_ptr = NULL;
 	}
-	return (0);
+	exit (1);
+}
+
+int	button_close(t_data *data)
+{
+	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+	data->win_ptr = NULL;
+	exit (1);
 }
 
 int	render(t_data *data)
@@ -118,7 +125,7 @@ int	main(int argc, char **argv)
 
 	mlx_loop_hook(data.mlx_ptr, &render, &data);
 	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &handle_keypress, &data);
-
+	mlx_hook(data.win_ptr, 17, 0, &button_close, &data);
 	mlx_loop(data.mlx_ptr);
 
 	/* we will exit the loop if there's no window left, and execute this code */
