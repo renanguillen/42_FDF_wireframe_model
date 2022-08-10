@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/09 22:45:32 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/10 20:14:45 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,18 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 /* The x and y coordinates of the rect corresponds to its upper left corner. */
 
-int render_line(t_img *img, t_matrix *matrix)
+int render_line(t_img *img, t_data *data)
 {
 	int	i;
 	int j;
 
 	i = 0;
-	while (i < matrix->row_count)
+	while (i < data->matrix.row_count)
 	{
 		j = 0;
-		while (j < matrix->col_count)
+		while (j < data->matrix.col_count)
 		{
-			img_pix_put(img, j, i, matrix->dot[i][j].color);
+			img_pix_put(img, j + 35, i + 20, data->matrix.dot[i][j].color);
 			j++;
 		}
 		i++;
@@ -79,12 +79,12 @@ int	handle_keypress(int keysym, t_data *data)
 	return (0);
 }
 
-int	render(t_data *data, t_matrix *matrix)
+int	render(t_data *data)
 {
 	if (data->win_ptr == NULL)
 		return (1);
-	render_background(&data->img, WHITE_PIXEL);
-	render_line(&data->img, matrix);
+	// render_background(&data->img, WHITE_PIXEL);
+	render_line(&data->img, data);
 
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img.mlx_img, 0, 0);
 
@@ -93,13 +93,12 @@ int	render(t_data *data, t_matrix *matrix)
 
 int	main(int argc, char **argv)
 {
-	t_matrix	matrix;
 	t_data		data;
 
-	get_lines(argc, argv, &matrix);
-	matrix.dot = malloc(sizeof (t_dot *) * matrix.row_count);
-	found_error ((void **)matrix.dot);
-	write_matrix(&matrix);
+	get_lines(argc, argv, &data);
+	data.matrix.dot = malloc(sizeof (t_dot *) * data.matrix.row_count);
+	found_error ((void **)data.matrix.dot);
+	write_matrix(&data);
 
 	data.mlx_ptr = mlx_init();
 	if (data.mlx_ptr == NULL)

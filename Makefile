@@ -12,7 +12,8 @@ SRCS = $(addprefix $(PATH_SRCS),\
 		get_lines.c\
 		found_error.c\
 		count_lines.c\
-		check_args.c)
+		check_args.c\
+		htoi.c)
 
 OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 

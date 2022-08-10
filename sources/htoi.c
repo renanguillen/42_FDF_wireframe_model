@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_matrix.c                                     :+:      :+:    :+:   */
+/*   htoi.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/09 20:10:42 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/10 19:13:49 by ridalgo-         ###   ########.fr       */
+/*   Created: 2022/08/10 20:06:44 by ridalgo-          #+#    #+#             */
+/*   Updated: 2022/08/10 20:06:53 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-void	write_matrix(t_data *data)
+int htoi(char s[])
 {
-	int		i;
+	int val;
+	int i;
 
+	val = 0;
 	i = 0;
-	while (data->matrix.lines[i])
+	if(s[i] == '0' && (s[i + 1]=='x' || s[i + 1]=='X'))
+		i += 2;
+	while(s[i])
 	{
-		data->matrix.dot[i] = malloc(sizeof (t_dot) * data->matrix.col_count);
-		found_error((void **) &data->matrix.dot[i]);
-		data->matrix.split = ft_split(data->matrix.lines[i], ' ');
-		get_arguments(data, i);
-		ft_matrixfree((void **)data->matrix.split);
+		if(val > INT_MAX)
+			return (0);
+		else if(s[i] >= '0' && s[i] <='9')
+			val = val * 16 + s[i] - '0';
+		else if(s[i]>='A' && s[i] <='F')
+			val = val * 16 + s[i] - 'A' + 10;
+		else if(s[i]>='a' && s[i] <='f')
+			val = val * 16 + s[i] - 'a' + 10;
+		else
+			return (0);
 		i++;
 	}
+	return (val);
 }
