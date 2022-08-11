@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   found_error.c                                      :+:      :+:    :+:   */
+/*   handle_keypress.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/09 20:15:53 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/09 20:16:06 by ridalgo-         ###   ########.fr       */
+/*   Created: 2022/08/11 15:53:07 by ridalgo-          #+#    #+#             */
+/*   Updated: 2022/08/11 15:53:24 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "../../includes/fdf.h"
 
-void	found_error(void **pointer)
+int	handle_keypress(int keysym, t_data *data)
 {
-	if (!pointer)
+	if (keysym == XK_Escape)
 	{
-		ft_putstr_fd("Something went wrong\n", 2);
-		exit(1);
+		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+		data->win_ptr = NULL;
 	}
+	exit (1);
 }

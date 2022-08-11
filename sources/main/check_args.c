@@ -6,11 +6,11 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:18:26 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/09 20:18:42 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/11 15:48:14 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "../../includes/fdf.h"
 
 int	check_args(int argc, char **argv)
 {

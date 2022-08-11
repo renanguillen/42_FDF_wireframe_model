@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_lines.c                                      :+:      :+:    :+:   */
+/*   write_matrix.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/09 20:17:21 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/09 20:17:31 by ridalgo-         ###   ########.fr       */
+/*   Created: 2022/08/09 20:10:42 by ridalgo-          #+#    #+#             */
+/*   Updated: 2022/08/11 15:48:44 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "../../includes/fdf.h"
 
-int	count_lines(char *argv)
+void	write_matrix(t_data *data)
 {
-	int		fd;
-	char	c;
-	int		lines;
+	int		i;
 
-	lines = 0;
-	fd = open(argv, O_RDONLY);
-	while (read(fd, &c, 1))
+	i = 0;
+	while (data->lines[i])
 	{
-		if (c == '\n' || c == 0)
-			lines++;
+		data->dot[i] = malloc(sizeof (t_dot) * data->cols);
+		found_error((void **) &data->dot[i]);
+		data->split = ft_split(data->lines[i], ' ');
+		get_arguments(data, i);
+		ft_matrixfree((void **)data->split);
+		i++;
 	}
-	return (lines);
 }
