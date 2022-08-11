@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_line.c                                      :+:      :+:    :+:   */
+/*   get_scale.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/11 21:20:02 by ridalgo-         ###   ########.fr       */
+/*   Created: 2022/08/11 20:52:16 by ridalgo-          #+#    #+#             */
+/*   Updated: 2022/08/11 21:18:39 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fdf.h"
 
-int render_line(t_img *img, t_data *data)
+void	get_scale(t_data *data)
 {
-	int	i;
-	int j;
-
-	i = 0;
-	while (i < data->rows)
-	{
-		j = 0;
-		while (j < data->cols)
-		{
-			img_pix_put(img, data->dot[i][j].y, data->dot[i][j].x, data->dot[i][j].color);
-			j++;
-		}
-		i++;
-	}
-	return (0);
+	data->win.wid = (data->cols * data->constant) + 100;
+	data->win.hei = (data->rows * data->constant) + 100;
 }

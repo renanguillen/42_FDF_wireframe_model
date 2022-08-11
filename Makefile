@@ -19,7 +19,8 @@ SRCS = $(addprefix $(PATH_SRCS)main/,\
 		render_line.c\
 		handle_keypress.c\
 		handle_button.c\
-		render.c)
+		render.c\
+		get_scale.c)
 
 OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 

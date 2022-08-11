@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/11 16:31:29 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/11 21:00:20 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,18 @@ typedef struct s_img
 	int		endian;
 }	t_img;
 
+typedef struct s_win
+{
+	int	wid;
+	int hei;
+}	t_win;
+
 typedef struct s_dot
 {
-	int				value;
-	int				color;
+	int	x;
+	int	y;
+	int	z;
+	int	color;
 }	t_dot;
 
 typedef struct s_data
@@ -49,11 +57,13 @@ typedef struct s_data
 	void	*win_ptr;
 	t_img	img;
 	int		cur_img;
+	t_win	win;
 	int		rows;
 	int		cols;
 	char	**lines;
 	char	**split;
 	t_dot	**dot;
+	int		constant;
 }	t_data;
 
 int		check_args(int argc, char **argv);
@@ -68,5 +78,6 @@ int		render_line(t_img *img, t_data *data);
 int		handle_keypress(int keysym, t_data *data);
 int		handle_button(t_data *data);
 int		render(t_data *data);
+void	get_scale(t_data *data);
 
 #endif

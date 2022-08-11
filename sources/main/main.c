@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/11 15:56:09 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/11 21:26:00 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ int	main(int argc, char **argv)
 
 	get_lines(argc, argv, &data);
 	data.dot = malloc(sizeof (t_dot *) * data.rows);
-	found_error ((void **)data.dot);
+	found_error((void **) data.dot);
+	data.constant = 1;
 	write_matrix(&data);
-
 	data.mlx_ptr = mlx_init();
 	if (data.mlx_ptr == NULL)
 		return (MLX_ERROR);
-	data.win_ptr = mlx_new_window(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "my window");
+	data.win_ptr = mlx_new_window(data.mlx_ptr, data.win.wid, data.win.hei, "my window");
 	if (data.win_ptr == NULL)
 	{
 		free(data.win_ptr);
@@ -49,7 +49,7 @@ int	main(int argc, char **argv)
 	}
 
 	/* Setup hooks */ 
-	data.img.mlx_img = mlx_new_image(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT);
+	data.img.mlx_img = mlx_new_image(data.mlx_ptr, data.win.wid, data.win.hei);
 	
 	data.img.addr = mlx_get_data_addr(data.img.mlx_img, &data.img.bpp,
 			&data.img.line_len, &data.img.endian);
