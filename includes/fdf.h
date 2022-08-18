@@ -6,15 +6,15 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/11 21:00:20 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/18 20:20:19 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-# define WINDOW_WIDTH 900
-# define WINDOW_HEIGHT 600
+# define WINDOW_WIDTH 1000
+# define WINDOW_HEIGHT 700
 # define MLX_ERROR 1
 # define WHITE_PIXEL 0xFFFFFF
 

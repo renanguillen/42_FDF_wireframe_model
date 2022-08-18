@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:17:21 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/11 15:48:18 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:17:51 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ int	count_lines(char *argv)
 
 	lines = 0;
 	fd = open(argv, O_RDONLY);
+	if (fd < 0)
+	{
+		ft_putstr_fd("File could not be opened\n", 2);
+		exit(1);
+	}
 	while (read(fd, &c, 1))
 	{
 		if (c == '\n' || c == 0)

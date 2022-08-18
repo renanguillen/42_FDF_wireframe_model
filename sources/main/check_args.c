@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:18:26 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/11 15:48:14 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:18:01 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	check_args(int argc, char **argv)
 	i = open(argv[1], O_RDONLY);
 	if (i < 0)
 	{
-		ft_putstr_fd("Something went wrong\n", 2);
+		ft_putstr_fd("File could not be opened\n", 2);
 		exit(1);
 	}
 	return (i);
