@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/18 20:20:19 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/18 22:39:04 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # include <fcntl.h>
 # include <string.h>
 # include "../libraries/42_libft/libft.h"
+# include <math.h>
 
 typedef struct s_img
 {
@@ -45,9 +46,9 @@ typedef struct s_win
 
 typedef struct s_dot
 {
-	int	x;
-	int	y;
-	int	z;
+	double	x;
+	double	y;
+	double	z;
 	int	color;
 }	t_dot;
 

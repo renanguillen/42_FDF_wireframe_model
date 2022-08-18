@@ -28,7 +28,7 @@ LIBFT = $(PATH_LIBFT)libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
-LFLAGS = -lX11 -lXext -lmlx $(LIBFT)
+LFLAGS =  -lm -lX11 -lXext -lmlx $(LIBFT)
 IFLAGS = -I $(PATH_INCL)
 
 REMOVE = rm -rf
