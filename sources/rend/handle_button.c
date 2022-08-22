@@ -3,18 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   handle_button.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:54:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/11 15:55:08 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/22 20:40:04 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fdf.h"
 
-int	handle_button(t_data *data)
+int	handle_button(int keypress, t_data *data)
 {
-	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-	data->win_ptr = NULL;
-	exit (1);
+	if (keypress == 65307)
+	{
+		mlx_destroy_image(data->mlx_ptr, data->img.mlx_img);
+		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+		mlx_destroy_display(data->mlx_ptr);
+		free(data->mlx_ptr);	
+		exit (1);
+	}
+	return (0);
 }

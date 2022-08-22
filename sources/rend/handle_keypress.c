@@ -3,21 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   handle_keypress.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:53:07 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/11 15:53:24 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/22 20:51:21 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fdf.h"
 
-int	handle_keypress(int keysym, t_data *data)
+int	handle_keypress(int keypress, t_data *data)
 {
-	if (keysym == XK_Escape)
+	printf("%d\n", keypress);
+	if (keypress == 65307)
 	{
+		mlx_destroy_image(data->mlx_ptr, data->img.mlx_img);
 		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-		data->win_ptr = NULL;
+		mlx_destroy_display(data->mlx_ptr);
+		free(data->mlx_ptr);	
+		exit (1);
 	}
-	exit (1);
+	return (0);
 }

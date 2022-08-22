@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/19 22:39:06 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/22 20:51:33 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ void	write_matrix(t_data *data);
 int		htoi(char s[]);
 void	img_pix_put(t_img *img, int x, int y, int color);
 int		render_line(t_img *img, t_data *data);
-int		handle_keypress(int keysym, t_data *data);
-int		handle_button(t_data *data);
+int		handle_keypress(int keypress, t_data *data);
+int		handle_button(int keypress, t_data *data);
 int		render(t_data *data);
 void	get_scale(t_data *data);
 
