@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/24 20:25:22 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/08/24 20:45:59 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fdf.h"
 
-void	render_background(t_img *img, int color)
-{
-	int	i;
-	int	j;
+// void	render_background(t_img *img, int color)
+// {
+// 	int	i;
+// 	int	j;
 
-	i = 0;
-	while (i < WINDOW_HEIGHT)
-	{
-		j = 0;
-		while (j < WINDOW_WIDTH)
-		{
-			img_pix_put(img, j++, i, color);
-		}
-		++i;
-	}
-}
+// 	i = 0;
+// 	while (i < WINDOW_HEIGHT)
+// 	{
+// 		j = 0;
+// 		while (j < WINDOW_WIDTH)
+// 		{
+// 			img_pix_put(img, j++, i, color);
+// 		}
+// 		++i;
+// 	}
+// }
 
 int	main(int argc, char **argv)
 {

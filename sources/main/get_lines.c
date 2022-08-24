@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:15:11 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/24 19:38:14 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/24 20:48:08 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ void	get_lines(int argc, char **argv, t_data *data)
 	i = 0;
 	data->split = ft_split(data->lines[i], ' ');
 	data->cols = ft_splitlen(data->split);
-	data->diag = sqrt((data->cols * data->cols) + (data->rows * data->rows));
-	data->area = sqrt((data->cols * data->rows));
+	data->area = (data->cols * data->rows);
 	printf("Linhas:%d\n", data->rows);
 	printf("Colunas:%d\n", data->cols);
 	printf("Diagonal:%f\n", data->diag);

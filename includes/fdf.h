@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/24 20:26:42 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/08/24 20:59:45 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,15 @@ typedef struct s_data
 	void	*mlx_ptr;
 	void	*win_ptr;
 	t_img	img;
-	int		cur_img;
 	t_win	win;
+	t_dot	**dot;
+	int		cur_img;
 	int		rows;
 	int		cols;
-	double	diag;
-	double	area;
 	char	**lines;
 	char	**split;
-	t_dot	**dot;
+	double	diag;
+	double	area;
 	double	scalex;
 	double	scaley;
 }	t_data;
