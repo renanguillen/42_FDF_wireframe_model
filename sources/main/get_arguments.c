@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:12:21 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/24 19:17:55 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/24 19:38:52 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	coordinates(t_data *data, int i, int j)
 {
-	data->dot[i][j].x = data->scalex + (i * 3000 / data->area) + (j * 3000 / data->area);
-	data->dot[i][j].y = data->scaley + (i * 3000 / data->area) - (j * 3000 / data->area);
+	data->dot[i][j].x = data->scalex + (i * 300 / data->area) + (j * 300 / data->area);
+	data->dot[i][j].y = data->scaley + (i * 300 / data->area) - (j * 300 / data->area);
 	// data->dot[i][j].z *= (WINDOW_WIDTH / 4);
 }
 
