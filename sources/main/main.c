@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/22 20:47:36 by coder            ###   ########.fr       */
+/*   Updated: 2022/08/23 21:21:30 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	main(int argc, char **argv)
 	get_lines(argc, argv, &data);
 	data.dot = malloc(sizeof (t_dot *) * data.rows);
 	found_error((void **) data.dot);
-	data.constant = 2;
 	write_matrix(&data);
 	
 	// parte da minilibx

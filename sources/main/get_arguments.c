@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_arguments.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:12:21 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/22 18:56:55 by coder            ###   ########.fr       */
+/*   Updated: 2022/08/23 21:33:34 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@
 */
 void	coordinates(t_data *data, int i, int j)
 {
-	data->dot[i][j].x = (WINDOW_HEIGHT / 2) + (i * 1) - (j * 1);
-	data->dot[i][j].y = (WINDOW_WIDTH / 4) + (i * 1) + (j * 1);
+	data->dot[i][j].x = data->scalex + (i * 3000 / data->area) + (j * 3000 / data->area);
+	data->dot[i][j].y = data->scaley + (i * 3000 / data->area) - (j * 3000 / data->area);
+	// data->dot[i][j].z *= (WINDOW_WIDTH / 4);
 }
 
 void	get_arguments(t_data *data, int i)

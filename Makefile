@@ -13,14 +13,14 @@ SRCS = $(addprefix $(PATH_SRCS)main/,\
 		found_error.c\
 		count_lines.c\
 		check_args.c\
-		htoi.c) \
+		htoi.c\
+		get_scale.c) \
 		$(addprefix $(PATH_SRCS)rend/,\
 		img_pix_put.c\
 		render_line.c\
 		handle_keypress.c\
 		handle_button.c\
-		render.c\
-		get_scale.c)
+		render.c)
 
 OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 

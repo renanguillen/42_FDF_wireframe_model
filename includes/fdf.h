@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/22 20:51:33 by coder            ###   ########.fr       */
+/*   Updated: 2022/08/23 21:23:38 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FDF_H
 
 # define WINDOW_WIDTH 1000
-# define WINDOW_HEIGHT 700
+# define WINDOW_HEIGHT 800
 # define MLX_ERROR 1
 # define WHITE_PIXEL 0xFFFFFF
 
@@ -61,10 +61,13 @@ typedef struct s_data
 	t_win	win;
 	int		rows;
 	int		cols;
+	double	diag;
+	double	area;
 	char	**lines;
 	char	**split;
 	t_dot	**dot;
-	int		constant;
+	double	scalex;
+	double	scaley;
 }	t_data;
 
 int		check_args(int argc, char **argv);

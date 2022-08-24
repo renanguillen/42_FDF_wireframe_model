@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:10:42 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/18 21:09:35 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/23 21:22:42 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	write_matrix(t_data *data)
 	int		i;
 
 	i = 0;
+	get_scale(data);
 	while (data->lines[i])
 	{
 		data->dot[i] = malloc(sizeof (t_dot) * data->cols);
@@ -25,5 +26,6 @@ void	write_matrix(t_data *data)
 		get_arguments(data, i++);
 		ft_matrixfree((void **)data->split);
 	}
-	get_scale(data);
+	printf("X:%f\n", data->dot[0][0].x);
+	printf("Y:%f\n", data->dot[0][0].y);
 }
