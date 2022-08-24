@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/24 20:45:32 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/24 22:10:11 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int render_line(t_img *img, t_data *data)
 		j = 0;
 		while (j < data->cols)
 		{
-			img_pix_put(img, data->dot[i][j].x, data->dot[i][j].y, data->dot[i][j].color);
+			img_pix_put(img, (j * data->scalej), (i *  data->scalei), data->dot[i][j].color);
 			j++;
 		}
 		i++;
