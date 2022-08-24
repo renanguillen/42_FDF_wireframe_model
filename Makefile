@@ -18,7 +18,7 @@ SRCS = $(addprefix $(PATH_SRCS)main/,\
 		$(addprefix $(PATH_SRCS)rend/,\
 		img_pix_put.c\
 		render_line.c\
-		handle_keypress.c\
+		handle_mousekey.c\
 		handle_button.c\
 		render.c)
 
