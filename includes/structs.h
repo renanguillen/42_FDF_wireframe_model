@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:51:55 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/08/25 19:51:59 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/08/25 20:08:25 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,9 @@ typedef struct s_data
 	int		cur_img;
 	int		rows;
 	int		cols;
-	int		scalei;
-	int		scalej;
+	double	diagonal;
+	double	scalei;
+	double	scalej;
 	char	**lines;
 	char	**split;
 	double	area;

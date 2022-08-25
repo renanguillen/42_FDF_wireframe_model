@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/25 19:54:22 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/25 20:09:01 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	main(int argc, char **argv)
 	found_error((void **) data.dot);
 	write_matrix(&data);
 	data.diagonal = sqrt(pow(data.rows, 2) + pow(data.cols, 2));
-	data.scalei = (WINDOW_WIDTH / data.diagonal);
-	data.scalej = (WINDOW_HEIGHT / data.diagonal);
+	data.scalei = (WINDOW_HEIGHT / data.diagonal);
+	data.scalej = (WINDOW_WIDTH / data.diagonal);
 	
 	// parte da minilibx
 	data.mlx_ptr = mlx_init();
