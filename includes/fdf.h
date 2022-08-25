@@ -6,7 +6,7 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/24 20:26:42 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/08/25 19:54:30 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,47 +28,7 @@
 # include <string.h>
 # include "../libraries/42_libft/libft.h"
 # include <math.h>
-
-typedef struct s_img
-{
-	void	*mlx_img;
-	char	*addr;
-	int		bpp;
-	int		line_len;
-	int		endian;
-}	t_img;
-
-typedef struct s_win
-{
-	int	wid;
-	int hei;
-}	t_win;
-
-typedef struct s_dot
-{
-	double	x;
-	double	y;
-	double	z;
-	int	color;
-}	t_dot;
-
-typedef struct s_data
-{
-	void	*mlx_ptr;
-	void	*win_ptr;
-	t_img	img;
-	int		cur_img;
-	t_win	win;
-	int		rows;
-	int		cols;
-	double	diag;
-	double	area;
-	char	**lines;
-	char	**split;
-	t_dot	**dot;
-	double	scalex;
-	double	scaley;
-}	t_data;
+# include "structs.h"
 
 int		check_args(int argc, char **argv);
 int		count_lines(char *argv);
