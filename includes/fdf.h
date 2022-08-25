@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
 /*   Updated: 2022/08/25 19:54:30 by vkist-si         ###   ########.fr       */
@@ -30,6 +30,7 @@
 # include <math.h>
 # include "structs.h"
 
+
 int		check_args(int argc, char **argv);
 int		count_lines(char *argv);
 void	get_lines(int argc, char **argv, t_data *data);
@@ -42,6 +43,5 @@ int		render_line(t_img *img, t_data *data);
 int		handle_mousekey(t_data *data);
 int		handle_button(int keypress, t_data *data);
 int		render(t_data *data);
-void	get_scale(t_data *data);
 
 #endif
