@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/24 23:12:22 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/25 19:50:56 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ typedef struct s_data
 	int		cur_img;
 	int		rows;
 	int		cols;
-	double		scalei;
-	double		scalej;
+	double	diagonal
+	double	scalei;
+	double	scalej;
 	char	**lines;
 	char	**split;
 	double	area;
