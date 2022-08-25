@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:51:55 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/08/25 20:08:25 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/08/25 20:20:03 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_win
 typedef struct s_dot
 {
 	double	z;
-	int	color;
+	int		color;
 }	t_dot;
 
 typedef struct s_data
