@@ -9,12 +9,13 @@ SRCS = $(addprefix $(PATH_SRCS)main/,\
 		main.c\
 		write_matrix.c\
 		get_arguments.c\
-		get_lines.c\
+		get_lines.c) \
+		$(addprefix $(PATH_SRCS)utils/,\
 		found_error.c\
 		count_lines.c\
 		check_args.c\
 		htoi.c) \
-		$(addprefix $(PATH_SRCS)rend/,\
+		$(addprefix $(PATH_SRCS)minilib_utils/,\
 		img_pix_put.c\
 		render_line.c\
 		handle_mousekey.c\
@@ -27,7 +28,7 @@ LIBFT = $(PATH_LIBFT)libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
-LFLAGS =  -lm -lX11 -lXext -lmlx $(LIBFT)
+LFLAGS = -lm -lX11 -lXext -lmlx $(LIBFT)
 IFLAGS = -I $(PATH_INCL)
 
 REMOVE = rm -rf
@@ -40,7 +41,8 @@ $(NAME): $(OBJS) $(LIBFT)
 $(PATH_OBJS)%.o: $(PATH_SRCS)%.c
 	@mkdir -p $(PATH_OBJS)
 	@mkdir -p $(PATH_OBJS)main/
-	@mkdir -p $(PATH_OBJS)rend/
+	@mkdir -p $(PATH_OBJS)minilib_utils/
+	@mkdir -p $(PATH_OBJS)utils/
 	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 $(LIBFT):
