@@ -29,8 +29,8 @@ int render_line(t_img *img, t_data *data)
 			dots = 0;
 			while (dots < data->scalej && j < data->cols - 1)
 			{
-				x = (WINDOW_WIDTH / 2) - (data->scalej * data->cols / 2) + (j * data->scalej);
-				y = (WINDOW_HEIGHT / 2) - (data->scalei * data->rows  / 2) + (i *  data->scalei);
+				x = (WINDOW_WIDTH / 2) - (data->scalej * data->cols / 2) + (i * data->scalej) + (j * data->scalej);
+				y = (WINDOW_HEIGHT / 2) - (data->scalei * data->rows  / 2) + (i *  data->scalei) - (j * data->scalei);
 				img_pix_put(img, x + dots++, y, data->dot[i][j].color);
 			}
 			dots = 0;
