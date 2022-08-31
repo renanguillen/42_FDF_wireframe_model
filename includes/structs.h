@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:51:55 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/08/25 20:20:03 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/01 01:13:54 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ typedef struct s_win
 
 typedef struct s_dot
 {
-	double	z;
+	float	x;
+	float	y;
+	float	z;
 	int		color;
 }	t_dot;
 
@@ -42,14 +44,13 @@ typedef struct s_data
 	t_win	win;
 	t_dot	**dot;
 	int		cur_img;
-	int		rows;
-	int		cols;
-	double	diagonal;
-	double	scalei;
-	double	scalej;
+	float	rows;
+	float	cols;
+	float	diagonal;
+	float	scalei;
+	float	scalej;
 	char	**lines;
 	char	**split;
-	double	area;
 }	t_data;
 
 #endif

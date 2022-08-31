@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:12:21 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/24 21:56:12 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/01 01:23:25 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,16 @@ void	get_arguments(t_data *data, int i)
 		if (ft_strchr(data->split[j], ','))
 		{
 			split2 = ft_split(data->split[j], ',');
+			data->dot[i][j].x = (((-1) * data->rows / 2) + i + (WINDOW_HEIGHT / 2));
+			data->dot[i][j].y = (((-1) * data->cols / 2) + j + (WINDOW_WIDTH / 2));
 			data->dot[i][j].z = ft_atoi(split2[0]);
 			data->dot[i][j].color = htoi(split2[1]);
 			ft_matrixfree((void **)split2);
 		}
 		else
 		{
+			data->dot[i][j].x = (((-1) * data->rows / 2) + i + (WINDOW_HEIGHT / 2));
+			data->dot[i][j].y = (((-1) * data->cols / 2) + j + (WINDOW_WIDTH / 2));
 			data->dot[i][j].z = ft_atoi(data->split[j]);
 			data->dot[i][j].color = WHITE_PIXEL;
 		}

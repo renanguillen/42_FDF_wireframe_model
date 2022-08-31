@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:15:11 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/25 20:53:42 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/01 01:14:19 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ void	get_lines(int argc, char **argv, t_data *data)
 	i = 0;
 	data->split = ft_split(data->lines[i], ' ');
 	data->cols = ft_splitlen(data->split);
-	data->area = (data->cols * data->rows);
 	ft_matrixfree((void **)data->split);
 }
