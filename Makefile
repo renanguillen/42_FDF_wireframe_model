@@ -9,7 +9,8 @@ SRCS = $(addprefix $(PATH_SRCS)main/,\
 		main.c\
 		write_matrix.c\
 		get_arguments.c\
-		get_lines.c) \
+		get_lines.c\
+		coordinates.c) \
 		$(addprefix $(PATH_SRCS)utils/,\
 		found_error.c\
 		count_lines.c\
@@ -64,8 +65,7 @@ git:
 	@sleep 1 && echo 5 && sleep 1 && echo 4 && sleep 1 && echo 3 && sleep 1 && echo 2 && sleep 1 && echo 1 && sleep 2
 	git add .
 	git commit -m 'automatic commit [Make Git]'
-	git push
 	clear
-	git status
+	git checkout main
 
 PHONY: all clean fclean re
