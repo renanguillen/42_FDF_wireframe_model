@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/01 01:24:54 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/01 01:55:09 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,11 @@ int	main(int argc, char **argv)
 	get_lines(argc, argv, &data);
 	data.dot = malloc(sizeof (t_dot *) * data.rows);
 	found_error((void **) data.dot);
-	write_matrix(&data);
 	data.diagonal = sqrt(pow(data.rows, 2) + pow(data.cols, 2));
-	data.scalei = 0.9 * (WINDOW_HEIGHT / data.diagonal);
-	data.scalej = 0.9 * (WINDOW_WIDTH / data.diagonal);
-	printf("Scale j= %f\n", data.scalej);
-	printf("Scale i= %f\n", data.scalei);
+	data.scalei = 0.5 * (WINDOW_HEIGHT / data.diagonal);
+	data.scalej = 0.5 * (WINDOW_WIDTH / data.diagonal);
+	printf("Scalei:%f\nScalej:%f\n", data.scalei, data.scalej);
+	write_matrix(&data);
 	
 	// parte da minilibx
 	data.mlx_ptr = mlx_init();
