@@ -10,7 +10,7 @@ SRCS = $(addprefix $(PATH_SRCS)main/,\
 		write_matrix.c\
 		get_arguments.c\
 		get_lines.c\
-		coordinates.c) \
+		lin_transf.c) \
 		$(addprefix $(PATH_SRCS)utils/,\
 		found_error.c\
 		count_lines.c\

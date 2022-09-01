@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/01 17:14:20 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:29:18 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ int		render_line(t_img *img, t_data *data);
 int		handle_mousekey(t_data *data);
 int		handle_button(int keypress, t_data *data);
 int		render(t_data *data);
-void	coordinates(t_data *data, int i, int j);
+void	lin_transf(t_data *data, int i, int j);
 
 #endif
