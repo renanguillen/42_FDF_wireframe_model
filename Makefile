@@ -65,7 +65,12 @@ git:
 	@sleep 1 && echo 5 && sleep 1 && echo 4 && sleep 1 && echo 3 && sleep 1 && echo 2 && sleep 1 && echo 1 && sleep 2
 	git add .
 	git commit -m 'automatic commit [Make Git]'
-	clear
 	git checkout main
+	git merge branch
+	git push
+	git branch -d branch
+	git checkout -b branch
+	clear
+	git status
 
 PHONY: all clean fclean re
