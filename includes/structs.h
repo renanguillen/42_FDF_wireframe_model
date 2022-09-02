@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:51:55 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/09/02 19:54:24 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/02 22:07:25 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ typedef struct s_line
 	float	y;
 	float	xend;
 	float	yend;
+	float	dx;
+	float	dy;
 }	t_line;
 
 typedef struct s_img
