@@ -6,12 +6,20 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:51:55 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/09/01 01:13:54 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/02 19:54:24 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
+
+typedef struct s_line
+{
+	float	x;
+	float	y;
+	float	xend;
+	float	yend;
+}	t_line;
 
 typedef struct s_img
 {
