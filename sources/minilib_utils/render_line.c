@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/05 22:16:06 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/06 00:30:34 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ int render_line(t_img *img, t_data *data)
 				img->line.y = data->dot[i][j].y;
 				img->line.xend = data->dot[i][j + 1].x;
 				img->line.yend = data->dot[i][j + 1].y;
-				img->line.dx = fabsf(img->line.xend - img->line.x);
-				img->line.dy = fabsf(img->line.yend - img->line.y);
+				img->line.dx = abs(img->line.xend - img->line.x);
+				img->line.dy = abs(img->line.yend - img->line.y);
 				bresenham(img, data->dot[i][j].color);
 			}
 			if (i != data->rows - 1)
@@ -85,8 +85,8 @@ int render_line(t_img *img, t_data *data)
 				img->line.y = data->dot[i][j].y;
 				img->line.xend = data->dot[i + 1][j].x;
 				img->line.yend = data->dot[i + 1][j].y;
-				img->line.dx = fabsf(img->line.xend - img->line.x);
-				img->line.dy = fabsf(img->line.yend - img->line.y);
+				img->line.dx = abs(img->line.xend - img->line.x);
+				img->line.dy = abs(img->line.yend - img->line.y);
 				bresenham(img, data->dot[i][j].color);
 			}
 			j++;
