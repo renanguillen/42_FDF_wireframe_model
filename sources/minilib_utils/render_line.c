@@ -6,7 +6,11 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/09/03 00:18:22 by ridalgo-         ###   ########.fr       */
+=======
+/*   Updated: 2022/09/05 20:05:16 by ridalgo-         ###   ########.fr       */
+>>>>>>> branch
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +62,13 @@ int render_line(t_img *img, t_data *data)
 {
 	int		i;
 	int		j;
+<<<<<<< HEAD
 	static int GLOBAL;
 	
+=======
+	static int global = 0;
+
+>>>>>>> branch
 	i = 0;
 	while (i < data->rows)
 	{
@@ -88,9 +97,16 @@ int render_line(t_img *img, t_data *data)
 				img->line.dx = (img->line.xend - img->line.x);
 				img->line.dy = (img->line.yend - img->line.y);
 				img->line.slope = img->line.dy / img->line.dx;
+<<<<<<< HEAD
 				bresenham(img, data->dot[i][j].color);
 				if (!GLOBAL)
 					printf("DOT[%d,%d](%f,%f)\n", i, j, img->line.x, img->line.y);
+=======
+				if (global < 200)
+					printf("Slope(%d,%d)(%d,%d):%f\n", i, j, i + 1, j, img->line.slope);
+				global++;
+				bresenham(img, data, i, j);
+>>>>>>> branch
 			}
 			j++;
 		}
