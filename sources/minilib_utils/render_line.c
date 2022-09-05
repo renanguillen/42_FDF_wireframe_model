@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/06 01:22:22 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/06 01:25:04 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	bresenham(t_img *img, int color)
 					img->line.y += img->line.sy;
 					eps -= img->line.dx;
 				}
-			img->line.x += img->line.sx;
-			img_pix_put(img, img->line.x, img->line.y, color);
+				img->line.x += img->line.sx;
+				img_pix_put(img, img->line.x, img->line.y, color);
 			}
 		}
 		else
@@ -45,8 +45,8 @@ void	bresenham(t_img *img, int color)
 					img->line.y += img->line.sy;
 					eps -= img->line.dx;
 				}
-			img->line.x += img->line.sx;
-			img_pix_put(img, img->line.x, img->line.y, color);
+				img->line.x += img->line.sx;
+				img_pix_put(img, img->line.x, img->line.y, color);
 			}
 		}
 	}
@@ -62,8 +62,8 @@ void	bresenham(t_img *img, int color)
 					img->line.x += img->line.sx;
 					eps -= img->line.dy;
 				}
-			img->line.y += img->line.sy;
-			img_pix_put(img, img->line.x, img->line.y, color);
+				img->line.y += img->line.sy;
+				img_pix_put(img, img->line.x, img->line.y, color);
 			}
 		}
 		else
@@ -76,8 +76,8 @@ void	bresenham(t_img *img, int color)
 					img->line.y += img->line.sy;
 					eps -= img->line.dx;
 				}
-			img->line.x += img->line.sx;
-			img_pix_put(img, img->line.x, img->line.y, color);
+				img->line.x += img->line.sx;
+				img_pix_put(img, img->line.x, img->line.y, color);
 			}
 		}
 	}
