@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/05 20:30:06 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/05 20:52:12 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int render_line(t_img *img, t_data *data)
 {
 	int		i;
 	int		j;
-	static int global = 0;
 
 	i = 0;
 	while (i < data->rows)
