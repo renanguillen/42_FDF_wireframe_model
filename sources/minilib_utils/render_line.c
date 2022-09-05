@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/05 20:52:12 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/05 21:50:49 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ int render_line(t_img *img, t_data *data)
 				img->line.yend = data->dot[i][j + 1].y;
 				img->line.dx = (img->line.xend - img->line.x);
 				img->line.dy = (img->line.yend - img->line.y);
-				img->line.slope = img->line.dy / img->line.dx;
 				bresenham(img, data->dot[i][j].color);
 			}
 			if (i != data->rows - 1)
@@ -85,7 +84,6 @@ int render_line(t_img *img, t_data *data)
 				img->line.yend = data->dot[i + 1][j].y;
 				img->line.dx = (img->line.xend - img->line.x);
 				img->line.dy = (img->line.yend - img->line.y);
-				img->line.slope = img->line.dy / img->line.dx;
 				bresenham(img, data->dot[i][j].color);
 			}
 			j++;
