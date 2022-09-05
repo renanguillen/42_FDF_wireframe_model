@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/06 00:30:34 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/06 01:22:22 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,45 +15,71 @@
 
 void	bresenham(t_img *img, int color)
 {
-	int	pk;
-	int	i;
+	int	eps;
 	
-	i = 0;
+	eps = 0;
 	img_pix_put(img, img->line.x, img->line.y, color);
-	if(img->line.dx > img->line.dy)
+	if (img->line.dx > img->line.dy)
 	{
-		pk = ((2 * img->line.dy) - img->line.dx);
-		while(i < img->line.dx)
+		if (img->line.sx < 0)
 		{
-			img->line.x++;
-			if(pk < 0)
-				pk += (2 * img->line.dy);
-			else
+			while(img->line.x >= img->line.xend)
 			{
-				img->line.y--;
-				pk += ((2 * img->line.dy) - (2 * img->line.dx));
-			}
+				eps += img->line.dy;
+				if ((2 * eps) >= img->line.dx)
+				{
+					img->line.y += img->line.sy;
+					eps -= img->line.dx;
+				}
+			img->line.x += img->line.sx;
 			img_pix_put(img, img->line.x, img->line.y, color);
-			i++;
+			}
+		}
+		else
+		{
+			while(img->line.x <= img->line.xend)
+			{
+				eps += img->line.dy;
+				if ((2 * eps) >= img->line.dx)
+				{
+					img->line.y += img->line.sy;
+					eps -= img->line.dx;
+				}
+			img->line.x += img->line.sx;
+			img_pix_put(img, img->line.x, img->line.y, color);
+			}
 		}
 	}
 	else
 	{
-		pk = ((2 * img->line.dx) - img->line.dy);
-		while(i < img->line.dy)
+		if (img->line.sy < 0)
 		{
-			img->line.y--;
-			if(pk < 0)
-				pk += (2 * img->line.dx);
-			else
+			while(img->line.y >= img->line.yend)
 			{
-				img->line.x++;
-				pk += ((2 * img->line.dx) - (2 * img->line.dy));
-			}
+				eps += img->line.dx;
+				if ((2 * eps) >= img->line.dy)
+				{
+					img->line.x += img->line.sx;
+					eps -= img->line.dy;
+				}
+			img->line.y += img->line.sy;
 			img_pix_put(img, img->line.x, img->line.y, color);
-			i++;
+			}
 		}
-		
+		else
+		{
+			while(img->line.x <= img->line.xend)
+			{
+				eps += img->line.dy;
+				if ((2 * eps) >= img->line.dx)
+				{
+					img->line.y += img->line.sy;
+					eps -= img->line.dx;
+				}
+			img->line.x += img->line.sx;
+			img_pix_put(img, img->line.x, img->line.y, color);
+			}
+		}
 	}
 }
 
@@ -75,8 +101,18 @@ int render_line(t_img *img, t_data *data)
 				img->line.y = data->dot[i][j].y;
 				img->line.xend = data->dot[i][j + 1].x;
 				img->line.yend = data->dot[i][j + 1].y;
-				img->line.dx = abs(img->line.xend - img->line.x);
-				img->line.dy = abs(img->line.yend - img->line.y);
+				img->line.dx = (img->line.xend - img->line.x);
+				if (img->line.dx > 0)
+					img->line.sx = 1;
+				else
+					img->line.sx = 1;
+				img->line.dx = abs(img->line.dx);
+				img->line.dy = (img->line.yend - img->line.y);
+				if (img->line.dy > 0)
+					img->line.sy = 1;
+				else
+					img->line.sy = 1;
+				img->line.dy = abs(img->line.dy);
 				bresenham(img, data->dot[i][j].color);
 			}
 			if (i != data->rows - 1)
@@ -85,8 +121,18 @@ int render_line(t_img *img, t_data *data)
 				img->line.y = data->dot[i][j].y;
 				img->line.xend = data->dot[i + 1][j].x;
 				img->line.yend = data->dot[i + 1][j].y;
-				img->line.dx = abs(img->line.xend - img->line.x);
-				img->line.dy = abs(img->line.yend - img->line.y);
+				img->line.dx = (img->line.xend - img->line.x);
+				if (img->line.dx > 0)
+					img->line.sx = 1;
+				else
+					img->line.sx = 1;
+				img->line.dx = abs(img->line.dx);
+				img->line.dy = (img->line.yend - img->line.y);
+				if (img->line.dy > 0)
+					img->line.sy = 1;
+				else
+					img->line.sy = 1;
+				img->line.dy = abs(img->line.dy);
 				bresenham(img, data->dot[i][j].color);
 			}
 			j++;
