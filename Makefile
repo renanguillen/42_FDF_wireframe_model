@@ -73,4 +73,7 @@ git:
 	clear
 	git status
 
+run: all
+	./fdf ./test_maps/t2.fdf
+
 PHONY: all clean fclean re
