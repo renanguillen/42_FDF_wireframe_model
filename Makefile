@@ -28,7 +28,7 @@ OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 LIBFT = $(PATH_LIBFT)libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -ggdb
 LFLAGS = -lm -lX11 -lXext -lmlx $(LIBFT)
 IFLAGS = -I $(PATH_INCL)
 
@@ -75,5 +75,8 @@ git:
 
 run: all
 	./fdf ./test_maps/quadrado.fdf
+
+vg:
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes  ./fdf ./test_maps/t2.fdf
 
 PHONY: all clean fclean re
