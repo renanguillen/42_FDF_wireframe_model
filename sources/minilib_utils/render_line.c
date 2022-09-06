@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/06 21:03:35 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/06 21:05:11 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,15 @@ void	bresenham(t_img *img, int color)
 		}
 		else
 		{
-			while(img->line.x <= img->line.xend)
+			while(img->line.y <= img->line.yend)
 			{
 				eps += img->line.dx;
-				if ((2 * eps) >= img->line.dx)
+				if ((2 * eps) >= img->line.dy)
 				{
-					img->line.y += img->line.sy;
+					img->line.x += img->line.sx;
 					eps -= img->line.dx;
 				}
-				img->line.x += img->line.sx;
+				img->line.y += img->line.sy;
 				img_pix_put(img, img->line.x, img->line.y, color);
 			}
 		}
