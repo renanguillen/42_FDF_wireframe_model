@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_line.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/06 21:09:12 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/06 21:17:40 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,16 +105,16 @@ int render_line(t_img *img, t_data *data)
 				if (img->line.dx > 0)
 					img->line.sx = 1;
 				else
-					img->line.sx = 1;
+					img->line.sx = -1;
 				img->line.dx = abs(img->line.dx);
 				img->line.dy = (img->line.yend - img->line.y);
 				if (img->line.dy > 0)
 					img->line.sy = 1;
 				else
-					img->line.sy = 1;
+					img->line.sy = -1;
 				img->line.dy = abs(img->line.dy);
 				bresenham(img, data->dot[i][j].color);
-			}
+			} 
 			if (i != data->rows - 1)
 			{
 				img->line.x = data->dot[i][j].x;
@@ -125,13 +125,13 @@ int render_line(t_img *img, t_data *data)
 				if (img->line.dx > 0)
 					img->line.sx = 1;
 				else
-					img->line.sx = 1;
+					img->line.sx = -1;
 				img->line.dx = abs(img->line.dx);
 				img->line.dy = (img->line.yend - img->line.y);
 				if (img->line.dy > 0)
 					img->line.sy = 1;
 				else
-					img->line.sy = 1;
+					img->line.sy = -1;
 				img->line.dy = abs(img->line.dy);
 				bresenham(img, data->dot[i][j].color);
 			}
