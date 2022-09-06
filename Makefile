@@ -74,6 +74,6 @@ git:
 	git status
 
 run: all
-	./fdf ./test_maps/t2.fdf
+	./fdf ./test_maps/quadrado.fdf
 
 PHONY: all clean fclean re
