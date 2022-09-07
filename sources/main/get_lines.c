@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:15:11 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/07 20:57:43 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/07 21:06:01 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	get_lines(int argc, char **argv, t_data *data)
 	data->lines = malloc(sizeof (char *) * (data->rows + 1));
 	found_error ((void **)data->lines);
 	while (i < data->rows)
-		data->lines[i++] = get_next_line(fd);
+		data->lines[i++] = ft_get_next_line(fd);
 	data->lines[i] = NULL;
 	i = 0;
 	data->split = ft_split(data->lines[i], ' ');
