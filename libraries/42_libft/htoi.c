@@ -6,11 +6,11 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 20:06:44 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/11 15:48:40 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/07 20:39:25 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fdf.h"
+#include "libft.h"
 
 int htoi(char s[])
 {

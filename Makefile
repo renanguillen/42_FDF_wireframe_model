@@ -14,8 +14,7 @@ SRCS = $(addprefix $(PATH_SRCS)main/,\
 		$(addprefix $(PATH_SRCS)utils/,\
 		found_error.c\
 		count_lines.c\
-		check_args.c\
-		htoi.c) \
+		check_args.c) \
 		$(addprefix $(PATH_SRCS)minilib_utils/,\
 		img_pix_put.c\
 		render_line.c\

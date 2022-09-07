@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 22:38:59 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/05 20:39:09 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/07 20:40:13 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -67,5 +68,6 @@ int		ft_toupper(int c);
 char	*get_next_line(int fd);
 int		ft_splitlen(char **split);
 void	ft_matrixfree(void **matrix);
+int		htoi(char s[]);
 
 #endif

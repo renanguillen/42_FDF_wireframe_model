@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:45:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/01 17:29:18 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/07 20:43:24 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	get_lines(int argc, char **argv, t_data *data);
 void	found_error(void **pointer);
 void	get_arguments(t_data *data, int i);
 void	write_matrix(t_data *data);
-int		htoi(char s[]);
 void	img_pix_put(t_img *img, int x, int y, int color);
 int		render_line(t_img *img, t_data *data);
 int		handle_mousekey(t_data *data);
