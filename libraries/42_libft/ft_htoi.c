@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 20:06:44 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/07 21:04:42 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/07 21:11:36 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ int	ft_htoi(char s[])
 
 	val = 0;
 	i = 0;
-	if (s[i] == '0' && (s[i + 1]=='x' || s[i + 1]=='X'))
+	if (s[i] == '0' && (s[i + 1] == 'x' || s[i + 1] == 'X'))
 		i += 2;
-	while(s[i])
+	while (s[i])
 	{
-		if(val > INT_MAX)
+		if (val > INT_MAX)
 			return (0);
-		else if(s[i] >= '0' && s[i] <='9')
+		else if (s[i] >= '0' && s[i] <= '9')
 			val = val * 16 + s[i] - '0';
-		else if(s[i]>='A' && s[i] <='F')
+		else if (s[i] >= 'A' && s[i] <= 'F')
 			val = val * 16 + s[i] - 'A' + 10;
-		else if(s[i]>='a' && s[i] <='f')
+		else if (s[i] >= 'a' && s[i] <= 'f')
 			val = val * 16 + s[i] - 'a' + 10;
 		else
 			return (0);
