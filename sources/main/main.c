@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/07 20:57:50 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/07 23:18:09 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,18 @@ int	main(int argc, char **argv)
 	data.scalej = 0.5 * (WINDOW_WIDTH / data.diagonal);
 	printf("Scalei:%f\nScalej:%f\n", data.scalei, data.scalej);
 	write_matrix(&data);
-	
-	// parte da minilibx
 	data.mlx_ptr = mlx_init();
-	if (data.mlx_ptr == NULL)
-		return (MLX_ERROR);
-	data.win_ptr = mlx_new_window(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT, "my window");
-	if (data.win_ptr == NULL)
-	{
-		free(data.win_ptr);
-		return (MLX_ERROR);
-	}
-	/* Setup hooks */ 
+	check_mlx_pointer(data.mlx_ptr);
+	data.win_ptr = mlx_new_window(data.mlx_ptr,
+		WINDOW_WIDTH, WINDOW_HEIGHT, "Bibbidi Bobbidi Boo");
 	data.img.mlx_img = mlx_new_image(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT);
-	data.img.addr = mlx_get_data_addr(data.img.mlx_img, &data.img.bpp, &data.img.line_len, &data.img.endian);
-	mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img.mlx_img, 0, 0);
+	check_mlx_window(data.win_ptr);
+	data.img.addr = mlx_get_data_addr(data.img.mlx_img, &data.img.bpp,
+		&data.img.line_len, &data.img.endian);
+	mlx_put_image_to_window(data.mlx_ptr, data.win_ptr,
+		data.img.mlx_img, 0, 0);
 	mlx_loop_hook(data.mlx_ptr, &render, &data);
 	mlx_hook(data.win_ptr, 17, 0, &handle_mousekey, &data);
-	mlx_hook(data.win_ptr, 02, 1L<<0, &handle_button, &data);
+	mlx_hook(data.win_ptr, 02, 1L << 0, &handle_button, &data);
 	mlx_loop(data.mlx_ptr);
 }
