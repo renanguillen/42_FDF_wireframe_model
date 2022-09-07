@@ -6,11 +6,11 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:17:21 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/18 16:17:51 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/07 20:59:33 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fdf.h"
+#include "../../includes/fdf_header.h"
 
 int	count_lines(char *argv)
 {

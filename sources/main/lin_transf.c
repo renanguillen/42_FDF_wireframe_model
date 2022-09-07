@@ -6,11 +6,11 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 17:01:02 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/07 00:17:57 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/07 20:57:47 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fdf.h"
+#include "../../includes/fdf_header.h"
 
 void	lin_transf(t_data *data, int i, int j)
 {

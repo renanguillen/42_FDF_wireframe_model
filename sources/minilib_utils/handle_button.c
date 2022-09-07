@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   handle_button.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:54:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/22 20:40:04 by coder            ###   ########.fr       */
+/*   Updated: 2022/09/07 20:59:00 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fdf.h"
+#include "../../includes/fdf_header.h"
 
 int	handle_button(int keypress, t_data *data)
 {

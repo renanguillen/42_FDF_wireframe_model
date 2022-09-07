@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   fdf_structs.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:51:55 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/09/06 00:46:59 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/07 20:56:03 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#ifndef FDF_STRUCTS_H
+# define FDF_STRUCTS_H
 
 typedef struct s_line
 {
@@ -22,7 +22,7 @@ typedef struct s_line
 	int	dx;
 	int	dy;
 	int	sx;
-	int sy;
+	int	sy;
 }	t_line;
 
 typedef struct s_img
@@ -38,7 +38,7 @@ typedef struct s_img
 typedef struct s_win
 {
 	int	wid;
-	int hei;
+	int	hei;
 }	t_win;
 
 typedef struct s_dot

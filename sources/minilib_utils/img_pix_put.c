@@ -6,11 +6,11 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:49:24 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/03 00:36:20 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/07 20:59:08 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fdf.h"
+#include "../../includes/fdf_header.h"
 
 void	img_pix_put(t_img *img, int x, int y, int color)
 {

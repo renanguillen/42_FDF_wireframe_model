@@ -6,11 +6,11 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:56:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/08/11 15:56:39 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/07 20:59:19 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fdf.h"
+#include "../../includes/fdf_header.h"
 
 int	render(t_data *data)
 {

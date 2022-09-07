@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_matrix.c                                     :+:      :+:    :+:   */
+/*   fdf_defines.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/09 20:10:42 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/07 20:57:54 by ridalgo-         ###   ########.fr       */
+/*   Created: 2022/09/07 20:51:42 by ridalgo-          #+#    #+#             */
+/*   Updated: 2022/09/07 20:52:26 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fdf_header.h"
+#ifndef FDF_DEFINES_H
+# define FDF_DEFINES_H
 
-void	write_matrix(t_data *data)
-{
-	int		i;
+# define WINDOW_WIDTH 1200
+# define WINDOW_HEIGHT 800
+# define MLX_ERROR 1
+# define WHITE_PIXEL 0xFFFFFF
 
-	i = 0;
-	while (data->lines[i])
-	{
-		data->dot[i] = malloc(sizeof (t_dot) * data->cols);
-		found_error((void **) &data->dot);
-		data->split = ft_split(data->lines[i], ' ');
-		get_arguments(data, i++);
-		ft_matrixfree((void **)data->split);
-	}
-}
+#endif
