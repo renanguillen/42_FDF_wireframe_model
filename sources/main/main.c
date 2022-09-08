@@ -6,12 +6,14 @@
 /*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/08 01:31:27 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/09/09 00:39:58 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fdf_header.h"
 
+int check_mlx_pointer(t_data *data);
+int check_mlx_window(t_data *data);
 // void	render_background(t_img *img, int color)
 // {
 // 	int	i;
@@ -34,23 +36,13 @@ int	main(int argc, char **argv)
 	t_data		data;
 
 	get_lines(argc, argv, &data);
-	data.dot = malloc(sizeof (t_dot *) * data.rows);
 	found_error((void **) data.dot);
-	data.diagonal = sqrt(pow(data.rows, 2) + pow(data.cols, 2));
-	data.scalei = 0.5 * (WINDOW_HEIGHT / data.diagonal);
-	data.scalej = 0.5 * (WINDOW_WIDTH / data.diagonal);
-	printf("Scalei:%f\nScalej:%f\n", data.scalei, data.scalej);
 	write_matrix(&data);
 	data.mlx_ptr = mlx_init();
-	if (data.mlx_ptr == NULL)
-		return (MLX_ERROR);
+	check_mlx_pointer(&data);
 	data.win_ptr = mlx_new_window(data.mlx_ptr,
 		WINDOW_WIDTH, WINDOW_HEIGHT, "Bibbidi Bobbidi Boo");
-	if (data.win_ptr == NULL)
-	{
-		free(data.win_ptr);
-		return (MLX_ERROR);
-	}
+	check_mlx_window(&data);
 	data.img.mlx_img = mlx_new_image(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT);
 	data.img.addr = mlx_get_data_addr(data.img.mlx_img, &data.img.bpp,
 		&data.img.line_len, &data.img.endian);
