@@ -73,7 +73,7 @@ git:
 	git status
 
 run: all
-	./fdf ./test_maps/quadrado.fdf
+	./fdf ./test_maps/t2.fdf
 
 vg:
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes  ./fdf ./test_maps/t2.fdf
