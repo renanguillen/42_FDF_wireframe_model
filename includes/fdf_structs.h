@@ -6,25 +6,13 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:51:55 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/09/07 22:30:36 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:39:44 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #ifndef FDF_STRUCTS_H
 # define FDF_STRUCTS_H
-
-typedef struct s_line
-{
-	int	x;
-	int	y;
-	int	xend;
-	int	yend;
-	int	dx;
-	int	dy;
-	int	sx;
-	int	sy;
-}	t_line;
 
 typedef struct s_img
 {
@@ -33,7 +21,15 @@ typedef struct s_img
 	int		bpp;
 	int		line_len;
 	int		endian;
-	t_line	line;
+	int		x0;
+	int		y0;
+	int		x1;
+	int		y1;
+	int		dx;
+	int		dy;
+	int		sx;
+	int		sy;
+	int		color;
 }	t_img;
 
 typedef struct s_win

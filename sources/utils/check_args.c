@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:18:26 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/08 23:41:12 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/09/12 19:21:18 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ int	check_args(int argc, char **argv)
 	return (i);
 }
 
-int check_mlx_pointer(t_data *data)
+int	check_mlx_pointer(t_data *data)
 {
 	if (data->mlx_ptr == NULL)
 		return (MLX_ERROR);
 	return (0);
 }
 
-int check_mlx_window(t_data *data)
+int	check_mlx_window(t_data *data)
 {
 	if (data->win_ptr == NULL)
 	{

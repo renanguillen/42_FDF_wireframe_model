@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   img_pix_put.c                                      :+:      :+:    :+:   */
+/*   put_a_pixel.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:49:24 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/07 22:16:23 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/09/12 19:19:58 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fdf_header.h"
 
-void	img_pix_put(t_img *img, int x, int y, int color)
+void	put_a_pixel(t_img *img)
 {
 	char	*pixel;
 	int		i;
 
-	if (x < 0 || x > WINDOW_WIDTH || y < 0 || y > WINDOW_HEIGHT)
+	if (img->x0 < 0 || img->x0 > WINDOW_WIDTH
+		|| img->y0 < 0 || img->y0 > WINDOW_HEIGHT)
 		return ;
 	i = img->bpp - 8;
-	pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
+	pixel = img->addr + (img->y0 * img->line_len + img->x0 * (img->bpp / 8));
 	while (i >= 0)
 	{
 		if (img->endian != 0)
-			*pixel++ = (color >> i) & 0xFF;
+			*pixel++ = (img->color >> i) & 0xFF;
 		else
-			*pixel++ = (color >> (img->bpp - 8 - i)) & 0xFF;
+			*pixel++ = (img->color >> (img->bpp - 8 - i)) & 0xFF;
 		i -= 8;
 	}
 }
