@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/09 00:39:58 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/09/12 20:09:50 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	main(int argc, char **argv)
 
 	get_lines(argc, argv, &data);
 	found_error((void **) data.dot);
+	data.travelx = 0;
+	data.travely = 0;
 	write_matrix(&data);
 	data.mlx_ptr = mlx_init();
 	check_mlx_pointer(&data);

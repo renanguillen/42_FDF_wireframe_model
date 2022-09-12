@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:51:55 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/09/12 18:39:44 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/12 19:46:12 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ typedef struct s_data
 	t_win	win;
 	t_dot	**dot;
 	int		cur_img;
+	int		travelx;
+	int		travely;
 	float	rows;
 	float	cols;
 	float	diagonal;

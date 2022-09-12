@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_button.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:54:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/07 22:18:23 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/09/12 20:07:59 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,26 @@ int	handle_button(int keypress, t_data *data)
 		mlx_destroy_display(data->mlx_ptr);
 		free(data->mlx_ptr);
 		exit (1);
+	}
+	else if (keypress == 65361)
+	{
+		data->travelx -= 4;
+		printf("%d\n", data->travelx);
+	}
+	else if (keypress == 65363)
+	{
+		data->travelx += 4;
+		printf("%d\n", data->travelx);
+	}
+	else if (keypress == 65362)
+	{
+		data->travely -= 4;
+		printf("%d\n", data->travely);
+	}
+	else if (keypress == 65364)
+	{
+		data->travely += 4;
+		printf("%d\n", data->travely);
 	}
 	return (0);
 }
