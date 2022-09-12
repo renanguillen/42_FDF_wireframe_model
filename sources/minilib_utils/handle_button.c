@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_button.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:54:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/12 20:07:59 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/12 21:31:17 by vkist-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	handle_button(int keypress, t_data *data)
 {
-	if (keypress == 65307)
+	
+	if (keypress == XK_Escape)
 	{
 		mlx_destroy_image(data->mlx_ptr, data->img.mlx_img);
 		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
@@ -22,22 +23,22 @@ int	handle_button(int keypress, t_data *data)
 		free(data->mlx_ptr);
 		exit (1);
 	}
-	else if (keypress == 65361)
+	else if (keypress == XK_Left)
 	{
 		data->travelx -= 4;
-		printf("%d\n", data->travelx);
+		printf("%d\n", keypress);
 	}
-	else if (keypress == 65363)
+	else if (keypress == XK_Right)
 	{
 		data->travelx += 4;
 		printf("%d\n", data->travelx);
 	}
-	else if (keypress == 65362)
+	else if (keypress == XK_Up)
 	{
 		data->travely -= 4;
 		printf("%d\n", data->travely);
 	}
-	else if (keypress == 65364)
+	else if (keypress == XK_Down)
 	{
 		data->travely += 4;
 		printf("%d\n", data->travely);
