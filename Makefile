@@ -5,17 +5,16 @@ PATH_OBJS = ./objects/
 PATH_INCL = ./includes/
 PATH_LIBFT = ./libraries/42_libft/
 
-SRCS = $(addprefix $(PATH_SRCS)main/,\
+SRCS = $(addprefix $(PATH_SRCS)map_handle/,\
 		main.c\
 		write_matrix.c\
 		get_arguments.c\
 		get_lines.c\
-		lin_transf.c) \
-		$(addprefix $(PATH_SRCS)utils/,\
+		lin_transf.c\
+		check_args.c\
 		found_error.c\
-		count_lines.c\
-		check_args.c) \
-		$(addprefix $(PATH_SRCS)minilib_utils/,\
+		count_lines.c) \
+		$(addprefix $(PATH_SRCS)img_handle/,\
 		put_a_pixel.c\
 		bresenham_line_drawing.c\
 		handle_x_button.c\
@@ -40,9 +39,8 @@ $(NAME): $(OBJS) $(LIBFT)
 
 $(PATH_OBJS)%.o: $(PATH_SRCS)%.c
 	@mkdir -p $(PATH_OBJS)
-	@mkdir -p $(PATH_OBJS)main/
-	@mkdir -p $(PATH_OBJS)minilib_utils/
-	@mkdir -p $(PATH_OBJS)utils/
+	@mkdir -p $(PATH_OBJS)map_handle/
+	@mkdir -p $(PATH_OBJS)img_handle/
 	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 $(LIBFT):
