@@ -5,8 +5,8 @@ PATH_OBJS = ./objects/
 PATH_INCL = ./includes/
 PATH_LIBFT = ./libraries/42_libft/
 
-SRCS = $(addprefix $(PATH_SRCS)map_handle/,\
-		main.c\
+SRCS = $(addprefix $(PATH_SRCS), fdf.c) \
+		$(addprefix $(PATH_SRCS)map_handle/,\
 		write_matrix.c\
 		get_arguments.c\
 		get_lines.c\
