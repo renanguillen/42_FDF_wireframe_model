@@ -20,7 +20,7 @@ SRCS = $(addprefix $(PATH_SRCS)main/,\
 		bresenham_line_drawing.c\
 		handle_x_button.c\
 		handle_keypress.c\
-		render.c)
+		draw_image.c)
 
 OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 

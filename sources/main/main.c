@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/13 22:18:24 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/13 22:23:47 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 		&data.img.line_len, &data.img.endian);
 	mlx_put_image_to_window(data.mlx_ptr, data.win_ptr,
 		data.img.mlx_img, 0, 0);
-	mlx_loop_hook(data.mlx_ptr, &render, &data);
+	mlx_loop_hook(data.mlx_ptr, &draw_image, &data);
 	mlx_hook(data.win_ptr, 17, 0, &handle_x_button, &data);
 	// mlx_hook(data.win_ptr, 02, 1L << 0, &handle_button, &data);
 	mlx_key_hook(data.win_ptr, &handle_keypress, &data);

@@ -6,13 +6,13 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:56:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/12 18:49:15 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/13 22:21:09 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fdf_header.h"
 
-int	render(t_data *data)
+int	draw_image(t_data *data)
 {
 	if (data->win_ptr == NULL)
 		return (1);
