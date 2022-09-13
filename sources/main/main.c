@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/13 23:01:53 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/13 23:50:39 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ int	main(int argc, char **argv)
 	data.mlx_ptr = mlx_init();
 	check_mlx_pointer(&data);
 	data.win_ptr = mlx_new_window(data.mlx_ptr,
-		WINDOW_WIDTH, WINDOW_HEIGHT, "Bibbidi Bobbidi Boo");
+			WINDOW_WIDTH, WINDOW_HEIGHT, "Bibbidi Bobbidi Boo");
 	check_mlx_window(&data);
 	data.img.mlx_img = mlx_new_image(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT);
 	data.img.addr = mlx_get_data_addr(data.img.mlx_img, &data.img.bpp,
-		&data.img.line_len, &data.img.endian);
+			&data.img.line_len, &data.img.endian);
 	mlx_put_image_to_window(data.mlx_ptr, data.win_ptr,
 		data.img.mlx_img, 0, 0);
 	mlx_loop_hook(data.mlx_ptr, &draw_image, &data);
