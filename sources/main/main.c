@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/13 22:23:47 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/13 22:49:45 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,10 @@
 
 int check_mlx_pointer(t_data *data);
 int check_mlx_window(t_data *data);
-// void	render_background(t_img *img, int color)
-// {
-// 	int	i;
-// 	int	j;
-
-// 	i = 0;
-// 	while (i < WINDOW_HEIGHT)
-// 	{
-// 		j = 0;
-// 		while (j < WINDOW_WIDTH)
-// 		{
-// 			img_pix_put(img, j++, i, color);
-// 		}
-// 		++i;
-// 	}
-// }
 
 int	main(int argc, char **argv)
 {
-	t_data		data;
+	t_data	data;
 
 	get_lines(argc, argv, &data);
 	found_error((void **) data.dot);
@@ -52,7 +36,6 @@ int	main(int argc, char **argv)
 		data.img.mlx_img, 0, 0);
 	mlx_loop_hook(data.mlx_ptr, &draw_image, &data);
 	mlx_hook(data.win_ptr, 17, 0, &handle_x_button, &data);
-	// mlx_hook(data.win_ptr, 02, 1L << 0, &handle_button, &data);
 	mlx_key_hook(data.win_ptr, &handle_keypress, &data);
 	mlx_loop(data.mlx_ptr);
 	mlx_destroy_display(data.mlx_ptr);
