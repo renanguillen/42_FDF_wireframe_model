@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/13 22:13:58 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/13 22:18:24 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 	mlx_loop_hook(data.mlx_ptr, &render, &data);
 	mlx_hook(data.win_ptr, 17, 0, &handle_x_button, &data);
 	// mlx_hook(data.win_ptr, 02, 1L << 0, &handle_button, &data);
-	mlx_key_hook(data.win_ptr, &handle_button, &data);
+	mlx_key_hook(data.win_ptr, &handle_keypress, &data);
 	mlx_loop(data.mlx_ptr);
 	mlx_destroy_display(data.mlx_ptr);
 	free(data.mlx_ptr);
