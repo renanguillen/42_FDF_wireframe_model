@@ -6,10 +6,9 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:51:55 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/09/12 19:46:12 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/13 23:02:35 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef FDF_STRUCTS_H
 # define FDF_STRUCTS_H

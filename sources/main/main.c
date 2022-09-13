@@ -6,14 +6,28 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/13 22:49:45 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/13 23:01:53 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fdf_header.h"
 
-int check_mlx_pointer(t_data *data);
-int check_mlx_window(t_data *data);
+static int	check_mlx_pointer(t_data *data)
+{
+	if (data->mlx_ptr == NULL)
+		return (MLX_ERROR);
+	return (0);
+}
+
+static int	check_mlx_window(t_data *data)
+{
+	if (data->win_ptr == NULL)
+	{
+		free(data->win_ptr);
+		return (MLX_ERROR);
+	}
+	return (0);
+}
 
 int	main(int argc, char **argv)
 {
