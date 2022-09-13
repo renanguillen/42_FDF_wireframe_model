@@ -18,7 +18,7 @@ SRCS = $(addprefix $(PATH_SRCS)main/,\
 		$(addprefix $(PATH_SRCS)minilib_utils/,\
 		put_a_pixel.c\
 		bresenham_line_drawing.c\
-		handle_mousekey.c\
+		handle_x_button.c\
 		handle_button.c\
 		render.c)
 
