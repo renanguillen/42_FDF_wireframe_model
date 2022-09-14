@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 22:38:59 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/07 21:03:44 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/14 20:42:07 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int		ft_toupper(int c);
 char	*ft_get_next_line(int fd);
 int		ft_splitlen(char **split);
 void	ft_matrixfree(void **matrix);
+void	ft_pointerfree(void *pointer);
 int		ft_htoi(char s[]);
 
 #endif

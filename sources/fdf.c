@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/14 00:24:17 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/14 20:47:20 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	main(int argc, char **argv)
 			&data.img.line_len, &data.img.endian);
 	mlx_handle_hooks(&data);
 	mlx_loop(data.mlx_ptr);
+	// ft_matrixfree((void *)data.dot);
 	mlx_destroy_display(data.mlx_ptr);
 	free(data.mlx_ptr);
 }
