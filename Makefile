@@ -13,7 +13,8 @@ SRCS = $(addprefix $(PATH_SRCS), fdf.c) \
 		lin_transf.c\
 		check_args.c\
 		found_error.c\
-		count_lines.c) \
+		count_lines.c\
+		free_data.c) \
 		$(addprefix $(PATH_SRCS)img_handle/,\
 		put_a_pixel.c\
 		bresenham_line_drawing.c\
@@ -74,6 +75,11 @@ run: all
 	./fdf ./test_maps/t2.fdf
 
 vg:
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes  ./fdf ./test_maps/t2.fdf
+	clear
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes  ./fdf ./test_maps/42.fdf
+
+n:
+	@clear
+	@norminette
 
 PHONY: all clean fclean re

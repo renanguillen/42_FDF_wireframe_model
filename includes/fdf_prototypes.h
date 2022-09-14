@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 20:54:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/13 22:21:34 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/14 21:11:11 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int		handle_x_button(t_data *data);
 int		handle_keypress(int keypress, t_data *data);
 int		draw_image(t_data *data);
 void	lin_transf(t_data *data, int i, int j);
+void	free_data(t_data *data);
 
 #endif

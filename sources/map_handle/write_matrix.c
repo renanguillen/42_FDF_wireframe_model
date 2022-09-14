@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:10:42 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/14 20:47:25 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/14 21:50:39 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	write_matrix(t_data *data)
 		data->split = ft_split(data->lines[i], ' ');
 		get_arguments(data, i++);
 		ft_matrixfree((void **)data->split);
-		// ft_pointerfree(data->lines);
 	}
+	data->dot[i] = NULL;
+	ft_matrixfree((void **)data->lines);
 }

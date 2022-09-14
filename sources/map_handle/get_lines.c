@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_lines.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkist-si <vkist-si@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:15:11 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/09 00:02:01 by vkist-si         ###   ########.fr       */
+/*   Updated: 2022/09/14 22:06:43 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ void	get_lines(int argc, char **argv, t_data *data)
 	found_error ((void **)data->lines);
 	while (i < data->rows)
 		data->lines[i++] = ft_get_next_line(fd);
+	// printf("i:%d\nrows:%f\n", i, data->rows);
 	data->lines[i] = NULL;
 	i = 0;
 	data->split = ft_split(data->lines[i], ' ');
 	data->cols = ft_splitlen(data->split);
 	ft_matrixfree((void **)data->split);
-	data->dot = malloc(sizeof (t_dot *) * data->rows);
+	data->dot = malloc(sizeof (t_dot *) * (data->rows + 1));
 	data->diagonal = sqrt(pow(data->rows, 2) + pow(data->cols, 2));
 	data->scalei = 0.5 * (WINDOW_HEIGHT / data->diagonal);
 	data->scalej = 0.5 * (WINDOW_WIDTH / data->diagonal);
