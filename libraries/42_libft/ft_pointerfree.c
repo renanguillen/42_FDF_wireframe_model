@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 20:40:39 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/14 20:43:11 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/14 20:49:41 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_pointerfree(void *pointer)
 {
 	if (!pointer)
-		return
+		return ;
 	free(pointer);
 }
