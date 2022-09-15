@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/12 19:49:01 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/15 23:08:47 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,18 +85,26 @@ static void	set_points(t_img *img, t_data *data, int i, int j)
 	if (j != data->cols - 1)
 	{
 		img->x0 = data->dot[i][j].x;
+		img->x0 += data->travelx;
 		img->y0 = data->dot[i][j].y;
+		img->y0 += data->travely;
 		img->x1 = data->dot[i][j + 1].x;
+		img->x1 += data->travelx;
 		img->y1 = data->dot[i][j + 1].y;
+		img->y1 += data->travely;
 		img->color = data->dot[i][j].color;
 		set_line_angle(img);
 	}
 	if (i != data->rows -1)
 	{
 		img->x0 = data->dot[i][j].x;
+		img->x0 += data->travelx;
 		img->y0 = data->dot[i][j].y;
+		img->x0 += data->travelx;
 		img->x1 = data->dot[i + 1][j].x;
+		img->x1 += data->travelx;
 		img->y1 = data->dot[i + 1][j].y;
+		img->y1 += data->travely;
 		img->color = data->dot[i][j].color;
 		set_line_angle(img);
 	}
