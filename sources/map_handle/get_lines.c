@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:15:11 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/14 22:06:43 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/15 23:19:23 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	get_lines(int argc, char **argv, t_data *data)
 	found_error ((void **)data->lines);
 	while (i < data->rows)
 		data->lines[i++] = ft_get_next_line(fd);
-	// printf("i:%d\nrows:%f\n", i, data->rows);
 	data->lines[i] = NULL;
 	i = 0;
 	data->split = ft_split(data->lines[i], ' ');
@@ -34,5 +33,4 @@ void	get_lines(int argc, char **argv, t_data *data)
 	data->diagonal = sqrt(pow(data->rows, 2) + pow(data->cols, 2));
 	data->scalei = 0.5 * (WINDOW_HEIGHT / data->diagonal);
 	data->scalej = 0.5 * (WINDOW_WIDTH / data->diagonal);
-	printf("Scalei:%f\nScalej:%f\n", data->scalei, data->scalej);
 }
