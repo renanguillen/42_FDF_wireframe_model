@@ -76,7 +76,7 @@ run: all
 
 vg:
 	clear
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes  ./fdf ./test_maps/42.fdf
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf ./test_maps/42.fdf
 
 n:
 	@clear
