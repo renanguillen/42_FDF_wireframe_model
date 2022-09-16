@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:49:24 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/12 19:19:58 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:31:15 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	put_a_pixel(t_img *img)
 	while (i >= 0)
 	{
 		if (img->endian != 0)
-			*pixel++ = (img->color >> i) & 0xFF;
+			*pixel++ = (img->color0 >> i) & 0xFF;
 		else
-			*pixel++ = (img->color >> (img->bpp - 8 - i)) & 0xFF;
+			*pixel++ = (img->color0 >> (img->bpp - 8 - i)) & 0xFF;
 		i -= 8;
 	}
 }

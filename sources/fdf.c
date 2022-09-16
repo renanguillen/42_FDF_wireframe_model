@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/15 23:06:19 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:16:21 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 	data.mlx_ptr = mlx_init();
 	check_mlx_pointer(&data);
 	data.win_ptr = mlx_new_window(data.mlx_ptr,
-			WINDOW_WIDTH, WINDOW_HEIGHT, "Bibbidi Bobbidi Boo");
+			WINDOW_WIDTH, WINDOW_HEIGHT, "FT Wireframe Model");
 	check_mlx_window(&data);
 	data.img.mlx_img = mlx_new_image(data.mlx_ptr, WINDOW_WIDTH, WINDOW_HEIGHT);
 	data.img.addr = mlx_get_data_addr(data.img.mlx_img, &data.img.bpp,

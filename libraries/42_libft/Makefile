@@ -16,16 +16,16 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	@ar rc $(NAME) $(OBJS)
 
 $(OBJS): $(SRCS)
-	cc $(FLAGS) -c $(SRCS)
+	@cc $(FLAGS) -c $(SRCS)
 
 clean:
-	rm -rf $(OBJS) $(BOBJS)
+	@rm -rf $(OBJS) $(BOBJS)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
 

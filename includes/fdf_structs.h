@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:51:55 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/09/15 23:21:11 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:45:31 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ typedef struct s_img
 	int		dy;
 	int		sx;
 	int		sy;
-	int		color;
+	int		color0;
+	int		color1;
 }	t_img;
 
 typedef struct s_win
