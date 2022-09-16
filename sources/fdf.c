@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 21:28:08 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 21:33:10 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 {
 	t_data	data;
 
-	get_lines(check_args(argc, argv), argv[1], &data);
+	get_lines(check_args(argc, argv), argv[1], &data, &data.map);
 	found_error((void **) data.dot);
 	data.travelx = 0;
 	data.travely = 0;
