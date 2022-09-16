@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 20:54:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 22:47:51 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 23:39:17 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	get_lines(int fd, char *filename, t_data *data, t_map *map);
 void	found_error(void **pointer);
 void	get_arguments(t_data *data, int i);
 void	write_matrix(t_data *data);
-void	put_a_pixel(t_img *img, t_line *line);
+void	put_a_pixel(t_img *img, t_line line);
 void	bresenham_line_drawing(t_data *data);
 int		handle_x_button(t_data *data);
 int		handle_keypress(int keypress, t_data *data);

@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 23:25:15 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 23:39:44 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	low_slope(t_img *img, t_line *line)
 
 	decisive = 0;
 	ppl = 0;
-	put_a_pixel(img, line);
+	put_a_pixel(img, *line);
 	decisive = (2 * line->dy) - line->dx;
 	while (ppl < line->dx)
 	{
@@ -32,7 +32,7 @@ static void	low_slope(t_img *img, t_line *line)
 			line->y0 += line->sy;
 			decisive += ((2 * line->dy) - (2 * line->dx));
 		}
-		put_a_pixel(img, line);
+		put_a_pixel(img, *line);
 	}
 }
 
@@ -43,7 +43,7 @@ static void	high_slope(t_img *img, t_line *line)
 
 	decisive = 0;
 	ppl = 0;
-	put_a_pixel(img, line);
+	put_a_pixel(img, *line);
 	decisive = (2 * line->dx) - line->dy;
 	while (ppl < line->dy)
 	{
@@ -56,7 +56,7 @@ static void	high_slope(t_img *img, t_line *line)
 			line->x0 += line->sx;
 			decisive += ((2 * line->dx) - (2 * line->dy));
 		}
-		put_a_pixel(img, line);
+		put_a_pixel(img, *line);
 	}
 }
 
