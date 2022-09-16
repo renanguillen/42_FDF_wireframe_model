@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:15:11 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 21:30:45 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 23:12:36 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	get_lines(int fd, char *filename, t_data *data, t_map *map)
 	int	i;
 
 	i = 0;
+	data->key.press = 0;
+	data->key.travelx = 0;
+	data->key.travely = 0;
 	map->rows = count_lines(filename);
 	data->lines = malloc(sizeof (char *) * (map->rows + 1));
 	found_error ((void **)data->lines);
