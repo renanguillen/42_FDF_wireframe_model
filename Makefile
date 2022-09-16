@@ -20,7 +20,11 @@ SRCS = $(addprefix $(PATH_SRCS), fdf.c) \
 		bresenham_line_drawing.c\
 		handle_x_button.c\
 		handle_keypress.c\
-		draw_image.c)
+		draw_image.c) \
+		$(addprefix $(PATH_SRCS)win_handle/,\
+		handle_hooks.c\
+		win_initialization.c)
+
 
 OBJS = $(patsubst $(PATH_SRCS)%.c, $(PATH_OBJS)%.o, $(SRCS))
 
@@ -42,6 +46,7 @@ $(PATH_OBJS)%.o: $(PATH_SRCS)%.c
 	@mkdir -p $(PATH_OBJS)
 	@mkdir -p $(PATH_OBJS)map_handle/
 	@mkdir -p $(PATH_OBJS)img_handle/
+	@mkdir -p $(PATH_OBJS)win_handle/
 	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 $(LIBFT):

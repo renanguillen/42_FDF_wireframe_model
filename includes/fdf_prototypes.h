@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 20:54:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 21:36:13 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 22:13:43 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ int		handle_keypress(int keypress, t_data *data);
 int		draw_image(t_data *data);
 void	lin_transf(t_data *data, t_map *map, int i, int j);
 void	free_data(t_data *data);
+int		win_initialization(t_data *data);
+void	handle_hooks(t_data *data);
 
 #endif

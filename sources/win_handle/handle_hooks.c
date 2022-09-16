@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   handle_hooks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 20:44:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 22:13:17 by ridalgo-         ###   ########.fr       */
+/*   Created: 2022/09/16 22:07:17 by ridalgo-          #+#    #+#             */
+/*   Updated: 2022/09/16 22:07:41 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf_header.h"
+#include "../../includes/fdf_header.h"
 
-int	main(int argc, char **argv)
+void	handle_hooks(t_data *data)
 {
-	t_data	data;
-
-	get_lines(check_args(argc, argv), argv[1], &data, &data.map);
-	found_error((void **) data.dot);
-	data.travelx = 0;
-	data.travely = 0;
-	write_matrix(&data);
-	win_initialization(&data);
-	handle_hooks(&data);
-	mlx_loop(data.mlx_ptr);
+	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
+		data->img.mlx_img, 0, 0);
+	mlx_loop_hook(data->mlx_ptr, &draw_image, data);
+	mlx_hook(data->win_ptr, 17, 0, &handle_x_button, data);
+	mlx_key_hook(data->win_ptr, &handle_keypress, data);
 }

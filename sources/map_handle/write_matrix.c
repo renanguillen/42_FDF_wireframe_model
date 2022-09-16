@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:10:42 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 21:33:01 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 21:45:11 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	write_matrix(t_data *data)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (data->lines[i])
