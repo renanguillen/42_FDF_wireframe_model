@@ -95,7 +95,7 @@ mars: all
 
 vg:
 	clear
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf ./test_maps/julia.fdf
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf ./test_maps/t2.fdf
 
 n:
 	@clear

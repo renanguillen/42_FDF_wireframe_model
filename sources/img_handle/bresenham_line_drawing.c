@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 22:31:09 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 23:25:15 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,27 +80,27 @@ static void	set_line_angle(t_img *img, t_line *line)
 		high_slope(img, line);
 }
 
-static void	set_points(t_img *img, t_data *data, int i, int j)
+static void	set_points(t_line *line, t_data *data, int i, int j)
 {
 	if (j != data->map.cols - 1)
 	{
-		img->line.x0 = data->dot[i][j].x + data->key.travelx;
-		img->line.y0 = data->dot[i][j].y + data->key.travely;
-		img->line.color0 = data->dot[i][j].color;
-		img->line.x1 = data->dot[i][j + 1].x + data->key.travelx;
-		img->line.y1 = data->dot[i][j + 1].y + data->key.travely;
-		img->line.color1 = data->dot[i][j + 1].color;
-		set_line_angle(img, &img->line);
+		line->x0 = data->dot[i][j].x + data->key.travelx;
+		line->y0 = data->dot[i][j].y + data->key.travely;
+		line->color0 = data->dot[i][j].color;
+		line->x1 = data->dot[i][j + 1].x + data->key.travelx;
+		line->y1 = data->dot[i][j + 1].y + data->key.travely;
+		line->color1 = data->dot[i][j + 1].color;
+		set_line_angle(&data->img, line);
 	}
 	if (i != data->map.rows -1)
 	{
-		img->line.x0 = data->dot[i][j].x + data->key.travelx;
-		img->line.y0 = data->dot[i][j].y + data->key.travely;
-		img->line.color0 = data->dot[i][j].color;
-		img->line.x1 = data->dot[i + 1][j].x + data->key.travelx;
-		img->line.y1 = data->dot[i + 1][j].y + data->key.travely;
-		img->line.color1 = data->dot[i + 1][j].color;
-		set_line_angle(img, &img->line);
+		line->x0 = data->dot[i][j].x + data->key.travelx;
+		line->y0 = data->dot[i][j].y + data->key.travely;
+		line->color0 = data->dot[i][j].color;
+		line->x1 = data->dot[i + 1][j].x + data->key.travelx;
+		line->y1 = data->dot[i + 1][j].y + data->key.travely;
+		line->color1 = data->dot[i + 1][j].color;
+		set_line_angle(&data->img, line);
 	}
 }
 
@@ -115,7 +115,7 @@ void	bresenham_line_drawing(t_data *data)
 		j = 0;
 		while (j < data->map.cols)
 		{
-			set_points(&data->img, data, i, j);
+			set_points(&data->img.line, data, i, j);
 			j++;
 		}
 		i++;
