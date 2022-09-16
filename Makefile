@@ -18,7 +18,8 @@ SRCS = $(addprefix $(PATH_SRCS), fdf.c) \
 		$(addprefix $(PATH_SRCS)img_handle/,\
 		put_a_pixel.c\
 		bresenham_line_drawing.c\
-		draw_image.c) \
+		draw_image.c\
+		clear_window.c) \
 		$(addprefix $(PATH_SRCS)win_handle/,\
 		handle_hooks.c\
 		handle_keypress.c\
@@ -81,7 +82,7 @@ run: all
 
 vg:
 	clear
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf ./test_maps/42.fdf
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf ./test_maps/julia.fdf
 
 n:
 	@clear

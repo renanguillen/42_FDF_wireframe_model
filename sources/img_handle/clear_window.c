@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_image.c                                       :+:      :+:    :+:   */
+/*   clear_window.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 15:56:25 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 22:48:50 by ridalgo-         ###   ########.fr       */
+/*   Created: 2022/09/16 22:48:52 by ridalgo-          #+#    #+#             */
+/*   Updated: 2022/09/16 22:49:04 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fdf_header.h"
 
-int	draw_image(t_data *data)
+void	clear_window(t_img *img)
 {
-	if (data->win_ptr == NULL)
-		return (1);
-	if (data->key.press)
-		clear_window(&data->img);
-	bresenham_line_drawing(data);
-	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-		data->img.mlx_img, 0, 0);
-	return (0);
+	int		i;
+	int		j;
+	int		k;
+	char	*pixel;
+
+	i = 0;
+	while (i < WINDOW_HEIGHT)
+	{
+		j = 0;
+		while (j < WINDOW_WIDTH)
+		{
+			k = img->bpp - 8;
+			pixel = img->addr + (i * img->line_len + j * (img->bpp / 8));
+			while (k >= 0)
+			{
+				if (img->endian != 0)
+					*pixel++ = (0 >> k) & 0xFF;
+				else
+					*pixel++ = (0 >> (img->bpp - 8 - k)) & 0xFF;
+				k -= 8;
+			}
+			j++;
+		}
+		i++;
+	}
 }

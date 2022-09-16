@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 21:09:23 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 22:31:09 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,21 +84,21 @@ static void	set_points(t_img *img, t_data *data, int i, int j)
 {
 	if (j != data->map.cols - 1)
 	{
-		img->line.x0 = data->dot[i][j].x + data->travelx;
-		img->line.y0 = data->dot[i][j].y + data->travely;
+		img->line.x0 = data->dot[i][j].x + data->key.travelx;
+		img->line.y0 = data->dot[i][j].y + data->key.travely;
 		img->line.color0 = data->dot[i][j].color;
-		img->line.x1 = data->dot[i][j + 1].x + data->travelx;
-		img->line.y1 = data->dot[i][j + 1].y + data->travely;
+		img->line.x1 = data->dot[i][j + 1].x + data->key.travelx;
+		img->line.y1 = data->dot[i][j + 1].y + data->key.travely;
 		img->line.color1 = data->dot[i][j + 1].color;
 		set_line_angle(img, &img->line);
 	}
 	if (i != data->map.rows -1)
 	{
-		img->line.x0 = data->dot[i][j].x + data->travelx;
-		img->line.y0 = data->dot[i][j].y + data->travely;
+		img->line.x0 = data->dot[i][j].x + data->key.travelx;
+		img->line.y0 = data->dot[i][j].y + data->key.travely;
 		img->line.color0 = data->dot[i][j].color;
-		img->line.x1 = data->dot[i + 1][j].x + data->travelx;
-		img->line.y1 = data->dot[i + 1][j].y + data->travely;
+		img->line.x1 = data->dot[i + 1][j].x + data->key.travelx;
+		img->line.y1 = data->dot[i + 1][j].y + data->key.travely;
 		img->line.color1 = data->dot[i + 1][j].color;
 		set_line_angle(img, &img->line);
 	}

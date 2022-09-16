@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:51:55 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/09/16 21:08:54 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 22:30:42 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,13 @@ typedef struct s_map
 	float	scalej;
 }	t_map;
 
+typedef struct s_key
+{
+	int	press;
+	int	travelx;
+	int	travely;
+}	t_key;
+
 typedef struct s_data
 {
 	void	*mlx_ptr;
@@ -68,9 +75,8 @@ typedef struct s_data
 	t_win	win;
 	t_map	map;
 	t_dot	**dot;
+	t_key	key;
 	int		cur_img;
-	int		travelx;
-	int		travely;
 	char	**lines;
 	char	**split;
 }	t_data;
