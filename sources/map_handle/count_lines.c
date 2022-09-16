@@ -6,20 +6,20 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:17:21 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/07 20:59:33 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 21:24:22 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fdf_header.h"
 
-int	count_lines(char *argv)
+int	count_lines(char *filename)
 {
 	int		fd;
 	char	c;
 	int		lines;
 
 	lines = 0;
-	fd = open(argv, O_RDONLY);
+	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 	{
 		ft_putstr_fd("File could not be opened\n", 2);

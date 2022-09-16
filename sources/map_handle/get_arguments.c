@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:12:21 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/07 21:05:41 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/16 21:10:19 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	get_arguments(t_data *data, int i)
 	char	**split2;
 
 	j = 0;
-	while (j < data->cols)
+	while (j < data->map.cols)
 	{
 		if (ft_strchr(data->split[j], ','))
 		{
