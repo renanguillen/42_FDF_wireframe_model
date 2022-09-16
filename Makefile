@@ -18,11 +18,11 @@ SRCS = $(addprefix $(PATH_SRCS), fdf.c) \
 		$(addprefix $(PATH_SRCS)img_handle/,\
 		put_a_pixel.c\
 		bresenham_line_drawing.c\
-		handle_x_button.c\
-		handle_keypress.c\
 		draw_image.c) \
 		$(addprefix $(PATH_SRCS)win_handle/,\
 		handle_hooks.c\
+		handle_keypress.c\
+		handle_x_button.c\
 		win_initialization.c)
 
 
