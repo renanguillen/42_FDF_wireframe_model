@@ -72,13 +72,26 @@ git:
 	git checkout main
 	git merge branch
 	git push
-	git branch -d branch
-	git checkout -b branch
 	clear
 	git status
 
-run: all
+t1: all
+	./fdf ./test_maps/t1.fdf
+
+t2: all
 	./fdf ./test_maps/t2.fdf
+
+julia: all
+	./fdf ./test_maps/julia.fdf
+
+fract: all
+	./fdf ./test_maps/elem-fract.fdf
+
+42: all
+	./fdf ./test_maps/42.fdf
+
+mars: all
+	./fdf ./test_maps/mars.fdf
 
 vg:
 	clear
