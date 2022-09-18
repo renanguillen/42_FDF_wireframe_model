@@ -8,9 +8,9 @@ PATH_LIBFT = ./libraries/42_libft/
 SRCS = $(addprefix $(PATH_SRCS), fdf.c) \
 		$(addprefix $(PATH_SRCS)map_handle/,\
 		get_each_point.c\
-		get_arguments.c\
+		set_dot_struct.c\
 		get_lines.c\
-		lin_transf.c\
+		linear_transformation.c\
 		check_args.c\
 		found_error.c\
 		count_lines.c\
