@@ -75,22 +75,19 @@ git:
 	@clear
 	@git status
 
-t1: all
+t1:
 	@./fdf ./test_maps/t1.fdf
 
-t2: all
+t2:
 	@./fdf ./test_maps/t2.fdf
 
-julia: all
-	@./fdf ./test_maps/julia.fdf
-
-fract: all
+fract:
 	@./fdf ./test_maps/elem-fract.fdf
 
-42: all
+42:
 	@./fdf ./test_maps/42.fdf
 
-mars: all
+mars:
 	@./fdf ./test_maps/mars.fdf
 
 vg:
