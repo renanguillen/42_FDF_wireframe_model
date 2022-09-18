@@ -6,13 +6,13 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:10:42 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 21:45:11 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/18 20:43:56 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fdf_header.h"
 
-void	write_matrix(t_data *data)
+void	get_each_point(t_data *data)
 {
 	int	i;
 

@@ -7,7 +7,7 @@ PATH_LIBFT = ./libraries/42_libft/
 
 SRCS = $(addprefix $(PATH_SRCS), fdf.c) \
 		$(addprefix $(PATH_SRCS)map_handle/,\
-		write_matrix.c\
+		get_each_point.c\
 		get_arguments.c\
 		get_lines.c\
 		lin_transf.c\
@@ -99,6 +99,6 @@ vg:
 
 n:
 	@clear
-	@norminette
+	@norminette ./sources
 
 PHONY: all clean fclean re

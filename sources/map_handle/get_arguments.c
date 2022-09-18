@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:12:21 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 21:35:16 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/18 20:37:22 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ void	get_arguments(t_data *data, int i)
 		{
 			data->dot[i][j].z = ft_atoi(data->split[j]);
 			lin_transf(data, &data->map, i, j);
-			data->dot[i][j].color = WHITE_PIXEL;
+			data->dot[i][j].color = WHITE_PIXEL - (8000 * data->dot[i][j].z);
+			if (data->dot[i][j].color < 0)
+				data->dot[i][j].color = WHITE_PIXEL;
 		}
 		j++;
 	}

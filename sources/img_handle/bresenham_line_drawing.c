@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:51:22 by ridalgo-          #+#    #+#             */
-/*   Updated: 2022/09/16 23:39:44 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/18 20:33:58 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ static void	low_slope(t_img *img, t_line *line)
 	decisive = (2 * line->dy) - line->dx;
 	while (ppl < line->dx)
 	{
+		if (ppl > line->dx / 2)
+			line->color0 = line->color1;
 		ppl++;
 		line->x0 += line->sx;
 		if (decisive < 0)
@@ -47,6 +49,8 @@ static void	high_slope(t_img *img, t_line *line)
 	decisive = (2 * line->dx) - line->dy;
 	while (ppl < line->dy)
 	{
+		if (ppl > line->dy / 2)
+			line->color0 = line->color1;
 		ppl++;
 		line->y0 += line->sy;
 		if (decisive < 0)
