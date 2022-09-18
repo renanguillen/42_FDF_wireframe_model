@@ -6,7 +6,7 @@
 /*   By: ridalgo- <ridalgo-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 19:51:55 by vkist-si          #+#    #+#             */
-/*   Updated: 2022/09/16 22:30:42 by ridalgo-         ###   ########.fr       */
+/*   Updated: 2022/09/18 20:54:01 by ridalgo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ typedef struct t_line
 	int	dy;
 	int	sx;
 	int	sy;
-	int	color0;
-	int	color1;
+	int	color;
 }	t_line;
 
 typedef struct s_img
