@@ -41,61 +41,61 @@ REMOVE = rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(IFLAGS) -o $(NAME) $(OBJS) $(LFLAGS)
+	@$(CC) $(CFLAGS) $(IFLAGS) -o $(NAME) $(OBJS) $(LFLAGS)
 
 $(PATH_OBJS)%.o: $(PATH_SRCS)%.c
 	@mkdir -p $(PATH_OBJS)
 	@mkdir -p $(PATH_OBJS)map_handle/
 	@mkdir -p $(PATH_OBJS)img_handle/
 	@mkdir -p $(PATH_OBJS)win_handle/
-	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 $(LIBFT):
-	make -C $(PATH_LIBFT)
+	@make -C $(PATH_LIBFT)
 
 clean:
-	$(REMOVE) $(PATH_OBJS)
-	make clean -C $(PATH_LIBFT)
+	@$(REMOVE) $(PATH_OBJS)
+	@make clean -C $(PATH_LIBFT)
 
 fclean: clean
-	$(REMOVE) $(NAME)
-	make fclean -C $(PATH_LIBFT)
+	@$(REMOVE) $(NAME)
+	@make fclean -C $(PATH_LIBFT)
 
 
 re: fclean all
 
 git:
-	git status
+	@git status
 	@sleep 1 && echo 5 && sleep 1 && echo 4 && sleep 1 && echo 3 && sleep 1 && echo 2 && sleep 1 && echo 1 && sleep 2
-	git add .
-	git commit -m 'automatic commit [Make Git]'
-	git checkout main
-	git merge branch
-	git push
-	clear
-	git status
+	@git add .
+	@git commit -m 'automatic commit [Make Git]'
+	@git checkout main
+	@git merge branch
+	@git push
+	@clear
+	@git status
 
 t1: all
-	./fdf ./test_maps/t1.fdf
+	@./fdf ./test_maps/t1.fdf
 
 t2: all
-	./fdf ./test_maps/t2.fdf
+	@./fdf ./test_maps/t2.fdf
 
 julia: all
-	./fdf ./test_maps/julia.fdf
+	@./fdf ./test_maps/julia.fdf
 
 fract: all
-	./fdf ./test_maps/elem-fract.fdf
+	@./fdf ./test_maps/elem-fract.fdf
 
 42: all
-	./fdf ./test_maps/42.fdf
+	@./fdf ./test_maps/42.fdf
 
 mars: all
-	./fdf ./test_maps/mars.fdf
+	@./fdf ./test_maps/mars.fdf
 
 vg:
-	clear
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf ./test_maps/t2.fdf
+	@clear
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf ./test_maps/t2.fdf
 
 n:
 	@clear
